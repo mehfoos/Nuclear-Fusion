@@ -1,6 +1,14 @@
+from scipy.integrate import odeint
+from numpy import linspace, exp
 import matplotlib.pyplot as plt
-import numpy as np
-
-x = np.linspace(0, 20, 100)  # Create a list of evenly-spaced numbers over the range
-plt.plot(x, np.sin(x))       # Plot the sine of each x point
-plt.show()                   # Display the plot
+#Function to return dy/dt
+def gradientFunc(curValue,curTime):
+    return -10.*curValue
+#Time for outputs
+time=linspace(0,1,40)
+y0= 10. #Initial condition
+y=odeint(gradientFunc,y0,time) #Integrate
+#Plot
+plt.plot(time,y,'x',label='odeint')
+plt.plot(time,y0*exp(-10.*time),label='Analytic')
+plt.legend() ; plt.show()
