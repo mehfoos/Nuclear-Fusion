@@ -48,7 +48,7 @@ if __name__ == "__main__":
     # Loop through each vs
     for vs in vsTuple:
         phi, j = solve(x, vs, phi_Initial, E_Initial) # Solve to obtain j
-        xAsFunctionOfj = interp1d(j, x, assume_sorted = False) # Get distance as an interpolant function of j
+        xAsFunctionOfj = interp1d(j, x) # Get distance as an interpolant function of j
         xWall = xAsFunctionOfj(0) # Interpolate to find x where j is 0
         xShifted = x-xWall # Shifted distance coordinates such that j is alway 0 for distance 0
         plt.plot(xShifted, j) # Plot
