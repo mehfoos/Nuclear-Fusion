@@ -23,7 +23,7 @@ def sheathFunc(f, x, vs, L):
     # Calculate the derivatives
     dphi_by_dx = -E
     dE_by_dx = ni - ne
-    dvi_by_dx = E/vi - vi/L
+    dvi_by_dx = E/vi - vi/L # Newly added based on result in part 1 of assignment
     
     # Return the derivatives in the same order as in the input f
     return [dphi_by_dx, dE_by_dx, dvi_by_dx]
@@ -42,7 +42,7 @@ def solve(x, vs, phi_Initial, E_Initial, L):
     vi = y[:,2]
 
     # Calculate j
-    mi_by_me = 1840.0
+    mi_by_me = 1840.0 # Given in assignment 1
     j = np.sqrt(mi_by_me/ (2.0*np.pi)) * np.exp(phi) - 1.0
 
     # Return the value of phi and j
@@ -76,7 +76,6 @@ if __name__ == "__main__":
         # Store value of vs at wall
         viAsFunctionOfj = interp1d(j, vi) # Get vi as an interpolant function of j
         vi_Wall_Array = np.append(vi_Wall_Array, viAsFunctionOfj(0))
-        print(vi_Wall_Array)
 
 
     # Inset plot and formatting
@@ -92,7 +91,7 @@ if __name__ == "__main__":
     ax2.xaxis.set_minor_locator(matplotlib.ticker.LogLocator(subs = np.arange(1.0, 10.0) * 0.1,numticks=10))
 
     # Main Plot Formatting
-    ax1.grid(True)  # Add a background grid
+    ax1.grid(linestyle='dotted')  # Add a background grid
     ax1.set_xlabel(r'Distance from wall [$\hat{x}$, Normalised to Debye Length $λ_D$] ')
     ax1.set_ylabel(r'Ion velocity [Normalised to ion sound speed $c_s$]')
     ax1.set_title(r'Assignment 3: Ion velocity at different collision lengths')
