@@ -71,7 +71,7 @@ if __name__ == "__main__":
         xShifted = x-xWall # Shifted distance coordinates such that j is alway 0 for distance 0
 
         # Plot vi against x, for each L
-        ax1.plot(xShifted, vi, label = r"$\hat{L} =$"+ " {L}".format(L=L))
+        ax1.plot(xShifted, vi, label = r"8\hat{L} =$"+ " {L}".format(L=L))
 
         # Store value of vs at wall
         viAsFunctionOfj = interp1d(j, vi) # Get vi as an interpolant function of j
