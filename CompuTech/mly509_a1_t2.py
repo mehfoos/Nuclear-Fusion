@@ -27,13 +27,15 @@ def run(vs):
     y = odeint(task2, y0, x, args = (vs,))
 
     plt.plot(x, y[:,0])
-    plt.plot(x, y[:,1])
+    #plt.plot(x, y[:,1])
     plt.grid(True)  # Add a background grid
-    plt.xlabel(r'$\hat{x}$ [normalised to Debye Length $λ_D$]')
-    plt.title(r'Task2; $V_s$ = %.1f' % (vs))
-    plt.legend([r'$\hat{\Phi} (\hat{x})$',r'$\hat{E}(\hat{x})$'])
-    plt.annotate(r'$\hat{\Phi}$(40) = %.2f' % (y[100-1,0]),(40,y[100-1,0]), horizontalalignment='right')
-    plt.annotate(r'$\hat{E}$(40) = %.2f' % (y[100-1,1]),(40,y[100-1,1]), horizontalalignment='right')
+    plt.xlabel(r'$\hat{x}$ towards wall [normalised to Debye Length $λ_D$]')
+    plt.ylabel(r'Electrical potential [$\hat{\Phi} (\hat{x})$]')
+    plt.title(r'Electrical Potential as function of distance to wall for $\hat{V_s}$ = %.1f' % (vs))
+    plt.legend([r'Electrical Potential $\hat{\Phi} (\hat{x})$',r'$\hat{E}(\hat{x})$'], loc='lower left')
+    #plt.annotate(r'$\hat{\Phi}$(40) = %.2f' % (y[100-1,0]),(40,y[100-1,0]), horizontalalignment='right')
+    #plt.annotate(r'$\hat{E}$(40) = %.2f' % (y[100-1,1]),(40,y[100-1,1]), horizontalalignment='right')
+    plt.xlim([0,40])
     plt.show()
 
 

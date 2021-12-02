@@ -42,11 +42,11 @@ if __name__ == "__main__":
 
 
     # Import the csv data
-    fileNameCommon = r"C:\Users\mly509\OneDrive - University of York\Documents\Fusion Lab Practicals\Week1\CrossSection2Line"
+    fileNameCommon = r"C:\Users\mly509\OneDrive - University of York\Documents\Fusion Lab Practicals\Week1\CrossSectionTrue1_Line"
     
     for iFile in range(nFiles):
         fileNo = iFile+1
-        fileName = fileNameCommon + str(fileNo) + "Data.csv"
+        fileName = fileNameCommon + str(fileNo) + ".csv"
         xdata, ydata = icf.load_2col(fileName)
 
         # Convert from pixels to mm
