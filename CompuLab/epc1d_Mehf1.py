@@ -244,7 +244,7 @@ def landau(npart, L, alpha=0.2):
     
     """
     # Start with a uniform distribution of positions
-    pos = random.uniform(0., L, npart)
+    pos = random.uniform(0., L, npart) # Random positions between 0 to  L
     pos0 = pos.copy()
     k = 2.*pi / L
     for i in range(10): # Adjust distribution using Newton iterations
@@ -252,6 +252,26 @@ def landau(npart, L, alpha=0.2):
         
     # Normal velocity distribution
     vel = random.normal(0.0, 1.0, npart)
+
+    if PLOTLEVEL > 2:
+        # Visualise the inner workings, to better understand the code
+        plt.figure()
+        plt.plot(pos0, marker='o', linestyle='none',label=r"pos0: uniform random")
+        plt.plot(pos,marker='o', linestyle='none', label=r"pos: Adjusted with Newton iterations")
+        plt.xlabel("index")
+        plt.ylabel("positions")
+        plt.title("L={0:.2f}; k={1:.2f}; alpha={2:.2f}; npart={3}".format(L,k,alpha,npart))
+        plt.suptitle("landua function's Position generation visualised")
+        plt.legend()
+
+        plt.figure()
+        plt.plot(vel, marker='o', linestyle='none',label=r"vel: random normal distribution")
+        plt.xlabel("index")
+        plt.ylabel("velocities")
+        plt.suptitle("landua function's Velocity generation visualised")
+        plt.legend()
+
+        plt.show()
     
     return pos, vel
 
@@ -270,6 +290,10 @@ def twostream(npart, L, vbeam=2):
 ####################################################################
 
 if __name__ == "__main__":
+    # Global setting controlling what plots to include
+    global PLOTLEVEL 
+    PLOTLEVEL = 3 # 0 means no plots; 1: default; 2: additional; 3:plots to better understand code
+
     # Generate initial condition
     #
     if False:
@@ -283,6 +307,8 @@ if __name__ == "__main__":
         ncells = 20
         npart = 1000
         pos, vel = landau(npart, L)
+        # pos is array of npart points distributed across 0 to L uniformly.
+        # vel is array of npart points distributed across 0 to 1 normally/gaussian
     
     # Create some output classes
     p = Plot(pos, vel, ncells, L) # This displays an animated figure
