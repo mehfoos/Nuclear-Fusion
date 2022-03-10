@@ -30,12 +30,11 @@ if __name__ == "__main__":
 
     # Configuration
     L_ = [4.*pi]
-    npart_ = [100,1000,2000]
+    npart_ = [1000]
     
-    ncells_ = [10,20,30,100]
+    ncells_ = [8]
 
     # Results
-    noiseLevelThreshold = np.zeros((len(L_),len(npart_),len(ncells_)))
     i1 = -1
     i2 = -1
     i3 = -1
@@ -79,8 +78,8 @@ if __name__ == "__main__":
                 # Try fitting line to first three peaks
                 fitLine3Pk = np.polyfit(s.t[peaks[:3]], np.log(s.firstharmonic[peaks[:3]]), 1) # taking log of peaks, and doing a line fit
                 fitLine3PkF = np.poly1d(fitLine3Pk) # Create a fit function from the polyfit
-                fit_Rsq = r_squared(s.firstharmonic[peaks[:3]], fitLine3PkF(s.t[peaks[:3]])) # Find R^2
-                print("3pk Fit Rsq: ", fit_Rsq)
+                fit_Rsq = r_squared(s.firstharmonic[peaks[:3]], np.exp(fitLine3PkF(s.t[peaks[:3]]))) # Find R^2
+                
 
                 # 
                 #ErrFit3 = abs(s.firstharmonic[peaks[:3]] - np.exp(fitLine3PkF(s.t[peaks[:3]])))
@@ -91,31 +90,42 @@ if __name__ == "__main__":
                 #badPeaks = errorExpPeaks > np.exp(errFitF(s.t[peaks]))
                 
                 # Find Bad Peaks
-                badPeaks = 1.5*np.exp(fitLine3PkF(s.t[peaks])) < s.firstharmonic[peaks] # If the first harmonic is less than fit by 50percent, then it's probably where noise is too high; this is boolean array
+                acceptanceThreshold = 1.5
+                badPeaks = acceptanceThreshold*np.exp(fitLine3PkF(s.t[peaks])) < s.firstharmonic[peaks] # If the first harmonic is less than fit by 50percent, then it's probably where noise is too high; this is boolean array
                 badPeaksI  = np.flatnonzero(badPeaks) # find the indices of values where we think the noise is too high
                 if len(badPeaksI) ==0: # If noise isn't high for any peak:
                     lastGoodPeakI = len(peaks)-1 # Set to last peak
                 else:
                     lastGoodPeakI = badPeaksI[0]-1
-                if fit_Rsq < 0.9:
-                    if np.log(s.firstharmonic[peaks[1]]) < np.log(s.firstharmonic[peaks[0]]):
+                if fit_Rsq < 0.5:
+                    if s.firstharmonic[peaks[1]] > acceptanceThreshold*s.firstharmonic[peaks[0]]: # If the second value is higher than the first, then we can consider first peak to be threshold
                         lastGoodPeakI = 0
-                    else:
+                    else: # Consider second value to be threshold
                         lastGoodPeakI = 1
+                if s.firstharmonic[peaks[1]] > acceptanceThreshold*s.firstharmonic[peaks[0]]: # If the second value is higher than the first, then we can consider first peak to be threshold
+                    lastGoodPeakI = 0
+
+                # Debugs
+                print("3pk Fit Rsq: ", fit_Rsq)
+                print("badPeaks ", badPeaks)
+                print("Fit Amplitudes*coeff", 1.5*np.exp(fitLine3PkF(s.t[peaks])))
+                print("s.firstharmonic[peaks]", s.firstharmonic[peaks])
+                print("badPeaksI", badPeaksI)
+                print("lastGoodPeakI", lastGoodPeakI)
                 
                 # Results
-                noiseLevelThreshold[i1][i2][i3] = s.firstharmonic[lastGoodPeakI] # 3-d array format
-                print("Noise Level Amplitude Threshold for ", L, "L; ", npart, "nparts; ", ncells, "ncells is: ", noiseLevelThreshold[i1,i2,i3])
+                noiseLevelThreshold = s.firstharmonic[peaks[lastGoodPeakI]] # 3-d array format
+                print("Noise Level Amplitude Threshold for ", L, "L; ", npart, "nparts; ", ncells, "ncells is: ", noiseLevelThreshold)
                 
                 # Results in 1d arrays
                 npartR = np.append(npartR, npart)
                 ncellsR = np.append(ncellsR, ncells)
                 LR = np.append(LR, L)
-                noiseLevelThresholdR = np.append(noiseLevelThresholdR, noiseLevelThreshold[i1][i2][i3])
+                noiseLevelThresholdR = np.append(noiseLevelThresholdR, noiseLevelThreshold)
 
 
                 #plt.close("all")
-                plt.plot(s.t[peaks[:lastGoodPeakI-1]],np.exp(fitLine3PkF(s.t[peaks[:lastGoodPeakI-1]])), linestyle='dashed', label=r"Fit Line for low noise data")
+                plt.plot(s.t[peaks[:lastGoodPeakI+1]],np.exp(fitLine3PkF(s.t[peaks[:lastGoodPeakI+1]])), linestyle='dashed', label=r"Fit Line for low noise data")
 
 
                 # Show plot

@@ -234,7 +234,7 @@ class Summary:
         # Amplitude of the first harmonic
         fh = 2.*abs(fft(d)[1]) / float(ncells)
         
-        print ("Time:", t, "First:", fh)
+        #print ("Time:", t, "First:", fh)
         
         self.t.append(t)
         self.firstharmonic.append(fh)
