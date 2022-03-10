@@ -1,7 +1,7 @@
 # Code to import and run epc1d functions
 
 #from matplotlib.lines import _LineStyle
-from epc1d_Mehf1 import *
+from epc1d import *
 import matplotlib.pyplot as plt
 from scipy.signal import find_peaks
 import numpy as np

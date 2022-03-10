@@ -227,7 +227,10 @@ class Summary:
         
         # Amplitude of the first harmonic
         fh = 2.*abs(fft(d)[1]) / float(ncells)
+        #print("fft(d): ", fft(d))
+        #print("fft(d)[1]: ", fft(d)[1])
         
+        #print("abs(fft(d)[1]): ", abs(fft(d)[1]))
         print("Time:", t, "First:", fh)
         
         self.t.append(t)
@@ -280,10 +283,35 @@ def twostream(npart, L, vbeam=2):
     pos = random.uniform(0., L, npart)
     # Normal velocity distribution
     vel = random.normal(0.0, 1.0, npart)
+    vel0=vel.copy()
     
     np2 = int(npart / 2)
     vel[:np2] += vbeam  # Half the particles moving one way
     vel[np2:] -= vbeam  # and half the other
+
+    if PLOTLEVEL > 2:
+        # Visualise the inner workings, to better understand the code
+        plt.figure()
+        plt.plot(vel,marker='.', markersize=1, linestyle='none', label=r"vel: by add/subtracting vbeam to half")
+        plt.plot(vel0, marker='.', markersize=1, linestyle='none',label=r"vel0: random normal distribution")
+        
+        plt.xlabel("index")
+        plt.ylabel("velocities")
+        plt.title("vbeam={0}; npart={1}".format(vbeam,npart))
+        plt.suptitle("twostream function's Velocity generation visualised")
+        plt.legend()
+
+        plt.figure()
+        plt.plot(pos, marker='.', linestyle='none',label=r"pos: uniform random")
+        plt.xlabel("index")
+        plt.ylabel("positions")
+        plt.suptitle("twostream function's Position generation visualised")
+        plt.title("L={0:.2f}; npart={1}".format(L,npart))
+        plt.legend()
+
+        plt.show()
+    
+    return pos, vel
     
     return pos,vel
 

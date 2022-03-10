@@ -103,7 +103,7 @@ def fft_integrate(y):
 def pic(f, ncells, L):
     """ f contains the position and velocity of all particles
     """
-    nparticles = len(f)/2     # Two values for each particle
+    nparticles = len(f)//2     # Two values for each particle
     pos = f[0:nparticles] # Position of each particle
     vel = f[nparticles:]      # Velocity of each particle
 
@@ -228,7 +228,7 @@ class Summary:
         # Amplitude of the first harmonic
         fh = 2.*abs(fft(d)[1]) / float(ncells)
         
-        print "Time:", t, "First:", fh
+        print ("Time:", t, "First:", fh)
         
         self.t.append(t)
         self.firstharmonic.append(fh)
