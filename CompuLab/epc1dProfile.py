@@ -228,7 +228,7 @@ class Summary:
         # Amplitude of the first harmonic
         fh = 2.*abs(fft(d)[1]) / float(ncells)
         
-        #print ("Time:", t, "First:", fh)
+        print ("Time:", t, "First:", fh)
         
         self.t.append(t)
         self.firstharmonic.append(fh)
@@ -269,9 +269,13 @@ def twostream(npart, L, vbeam=2):
 
 ####################################################################
 
-if __name__ == "__main__":
+def main():
     # Generate initial condition
     #
+    
+    # Random seed
+    random.seed(10)
+    
     if False:
         # 2-stream instability
         L = 100
@@ -302,6 +306,23 @@ if __name__ == "__main__":
     plt.yscale('log')
     
     plt.ioff() # This so that the windows stay open
-    plt.show()
+    #plt.show()
+
+if __name__ == "__main__":
+    # main()
+    import cProfile
+    cProfile.run('main()',"output.dat")
+
+    import pstats 
+    from pstats import SortKey
+
+    with open("output_time.txt", "w") as f:
+        p = pstats.Stats("output.dat", stream=f)
+        p.sort_stats("time").print_stats()
+
+    with open("output_calls.txt", "w") as f:
+        p = pstats.Stats("output.dat", stream=f)
+        p.sort_stats("calls").print_stats()
+    
     
     

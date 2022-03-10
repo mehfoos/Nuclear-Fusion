@@ -2,10 +2,16 @@
 #
 # Electrostatic PIC code in a 1D cyclic domain
 
-from numpy import arange, concatenate, zeros, linspace, floor, array, pi
+from pickle import TRUE
+from matplotlib.text import OffsetFrom
+from numpy import arange, bincount, concatenate, zeros, linspace, floor, array, pi
 from numpy import sin, cos, sqrt, random, histogram
 
-import matplotlib.pyplot as plt # Matplotlib plotting library
+import matplotlib.pyplot as plt
+import scipy # Matplotlib plotting library
+
+# Addons for optimisation
+import scipy.ndimage 
 
 try:
     import matplotlib.gridspec as gridspec  # For plot layout grid
@@ -47,6 +53,28 @@ def calc_density(position, ncells, L):
     nparticles = len(position)
     
     dx = L / ncells       # Uniform cell spacing
+
+    # Vectorising optimisations
+    p = position / dx # converting position into a cell number fraction
+    plower = p.astype(int)        # Cell to the left (rounding down; except negatives but leaving unchanged)
+    offset = p - plower    # Offset from the left
+    nOffset = 1. - offset # Offset from right
+    offsets_summed_grouped = scipy.ndimage.sum_labels(offset, plower, arange(ncells)) # Sum of offsets per bin, sorted
+    nOffsets_summed_grouped = scipy.ndimage.sum_labels(nOffset, plower, arange(ncells)) # Sum of offsets from right per bin, sorted
+    density += nOffsets_summed_grouped
+    density[(arange(ncells)+1)%ncells] += offsets_summed_grouped    
+    density *= float(ncells) / float(nparticles)  # Make average density equal to 1
+
+    # print("offset: ", offset)
+    # print("new offsets_summed_grouped: ", offsets_summed_grouped)
+    print("new density: ", density)
+
+    # old
+    density = zeros([ncells])
+    nparticles = len(position)
+    
+    dx = L / ncells       # Uniform cell spacing
+
     for p in position / dx:    # Loop over all the particles, converting position into a cell number
         plower = int(p)        # Cell to the left (rounding down)
         offset = p - plower    # Offset from the left
@@ -54,6 +82,10 @@ def calc_density(position, ncells, L):
         density[(plower + 1) % ncells] += offset
     # nparticles now distributed amongst ncells
     density *= float(ncells) / float(nparticles)  # Make average density equal to 1
+    
+    print("old method: " , density)
+    
+    quit()
     return density
 
 def periodic_interp(y, x):
@@ -228,7 +260,7 @@ class Summary:
         # Amplitude of the first harmonic
         fh = 2.*abs(fft(d)[1]) / float(ncells)
         
-        #print ("Time:", t, "First:", fh)
+        print ("Time:", t, "First:", fh)
         
         self.t.append(t)
         self.firstharmonic.append(fh)
@@ -269,9 +301,13 @@ def twostream(npart, L, vbeam=2):
 
 ####################################################################
 
-if __name__ == "__main__":
+def main():
     # Generate initial condition
     #
+
+    # Random seed
+    random.seed(10)
+
     if False:
         # 2-stream instability
         L = 100
@@ -290,7 +326,7 @@ if __name__ == "__main__":
     
     # Run the simulation
     pos, vel = run(pos, vel, L, ncells, 
-                   out=[p, s],                      # These are called each output
+                   out=[p, s],  #[s], #[p, s],                      # These are called each output
                    output_times=linspace(0.,20,50)) # The times to output
     
     # Summary stores an array of the first-harmonic amplitude
@@ -302,6 +338,26 @@ if __name__ == "__main__":
     plt.yscale('log')
     
     plt.ioff() # This so that the windows stay open
-    plt.show()
+    #plt.show()
+
+    #print(pos)
+
+
+if __name__ == "__main__":
+    # main()
+    import cProfile
+    cProfile.run('main()',"output.dat")
+
+    import pstats 
+    from pstats import SortKey
+
+    with open("output_time.txt", "w") as f:
+        p = pstats.Stats("output.dat", stream=f)
+        p.sort_stats("time").print_stats()
+
+    with open("output_calls.txt", "w") as f:
+        p = pstats.Stats("output.dat", stream=f)
+        p.sort_stats("calls").print_stats()
+    
     
     

@@ -7,6 +7,9 @@ from numpy import sin, cos, sqrt, random, histogram
 
 import matplotlib.pyplot as plt # Matplotlib plotting library
 
+# Addons for optimisation
+import scipy.ndimage 
+
 try:
     import matplotlib.gridspec as gridspec  # For plot layout grid
     got_gridspec = True
@@ -47,12 +50,15 @@ def calc_density(position, ncells, L):
     nparticles = len(position)
     
     dx = L / ncells       # Uniform cell spacing
-    for p in position / dx:    # Loop over all the particles, converting position into a cell number
-        plower = int(p)        # Cell to the left (rounding down)
-        offset = p - plower    # Offset from the left
-        density[plower] += 1. - offset
-        density[(plower + 1) % ncells] += offset
-    # nparticles now distributed amongst ncells
+    # Vectorising optimisations
+    p = position / dx # converting position into a cell number fraction
+    plower = p.astype(int)        # Cell to the left (rounding down; except negatives but leaving unchanged)
+    offset = p - plower    # Offset from the left
+    nOffset = 1. - offset # Offset from right
+    offsets_summed_grouped = scipy.ndimage.sum_labels(offset, plower, arange(ncells)) # Sum of offsets per bin, sorted
+    nOffsets_summed_grouped = scipy.ndimage.sum_labels(nOffset, plower, arange(ncells)) # Sum of offsets from right per bin, sorted
+    density += nOffsets_summed_grouped
+    density[(arange(ncells)+1)%ncells] += offsets_summed_grouped    
     density *= float(ncells) / float(nparticles)  # Make average density equal to 1
     return density
 
@@ -228,7 +234,7 @@ class Summary:
         # Amplitude of the first harmonic
         fh = 2.*abs(fft(d)[1]) / float(ncells)
         
-        #print ("Time:", t, "First:", fh)
+        print ("Time:", t, "First:", fh)
         
         self.t.append(t)
         self.firstharmonic.append(fh)

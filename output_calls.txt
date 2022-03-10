@@ -1,0 +1,107 @@
+Thu Mar 10 12:10:35 2022    output.dat
+
+         1075 function calls (1027 primitive calls) in 0.004 seconds
+
+   Ordered by: call count
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      342    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+       80    0.000    0.000    0.000    0.000 {built-in method numpy.core._multiarray_umath.dragon4_positional}
+     42/2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\arrayprint.py:751(recurser)
+       42    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\arrayprint.py:946(<genexpr>)
+       42    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\arrayprint.py:951(<genexpr>)
+       42    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\arrayprint.py:955(<genexpr>)
+       42    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\arrayprint.py:956(<genexpr>)
+       40    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\arrayprint.py:701(_extendLine)
+       40    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\arrayprint.py:715(_extendLine_pretty)
+       40    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\arrayprint.py:980(__call__)
+       40    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+       40    0.000    0.000    0.000    0.000 {method 'splitlines' of 'str' objects}
+       14    0.000    0.000    0.000    0.000 {built-in method builtins.issubclass}
+       10    0.000    0.000    0.000    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+        8    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
+        8    0.000    0.000    0.000    0.000 {built-in method numpy.geterrobj}
+        8    0.000    0.000    0.000    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+        6    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\lib\stride_tricks.py:540(<genexpr>)
+        6    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+        6    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+        6    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+        6    0.000    0.000    0.000    0.000 {method 'ravel' of 'numpy.ndarray' objects}
+      5/1    0.000    0.000    0.000    0.000 C:\Users\mly509\AppData\Local\Programs\Python\Python39\lib\abc.py:121(__subclasscheck__)
+      5/1    0.000    0.000    0.000    0.000 {built-in method _abc._abc_subclasscheck}
+        4    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\multiarray.py:883(bincount)
+        4    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(bincount)
+        4    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\numerictypes.py:284(issubclass_)
+        4    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\fromnumeric.py:70(<dictcomp>)
+        4    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\fromnumeric.py:69(_wrapreduction)
+        4    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\_ufunc_config.py:32(seterr)
+        4    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\_ufunc_config.py:131(geterr)
+        4    0.000    0.000    0.000    0.000 {built-in method numpy.array}
+        4    0.000    0.000    0.000    0.000 {built-in method numpy.seterrobj}
+        3    0.000    0.000    0.000    0.000 {method 'copy' of 'numpy.ndarray' objects}
+        3    0.000    0.000    0.000    0.000 {built-in method numpy.arange}
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\AppData\Local\Programs\Python\Python39\lib\abc.py:117(__instancecheck__)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\numerictypes.py:358(issubdtype)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\numeric.py:1858(isscalar)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\fromnumeric.py:2633(_amax_dispatcher)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\fromnumeric.py:2638(amax)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\fromnumeric.py:2758(_amin_dispatcher)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\fromnumeric.py:2763(amin)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\_methods.py:38(_amax)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\_methods.py:42(_amin)
+        2    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(amax)
+        2    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(amin)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\_ufunc_config.py:425(__init__)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\_ufunc_config.py:429(__enter__)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\_ufunc_config.py:434(__exit__)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\arrayprint.py:375(<lambda>)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\arrayprint.py:367(_get_formatdict)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\arrayprint.py:416(_get_format_function)
+        2    0.000    0.000    0.001    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\arrayprint.py:468(wrapper)
+        2    0.000    0.000    0.001    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\arrayprint.py:485(_array2string)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\arrayprint.py:66(<dictcomp>)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\arrayprint.py:61(_make_options_dict)
+        2    0.000    0.000    0.001    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\arrayprint.py:523(array2string)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\arrayprint.py:742(_formatArray)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\arrayprint.py:860(_none_or_positive_arg)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\arrayprint.py:869(__init__)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\arrayprint.py:896(fillFormat)
+        2    0.000    0.000    0.001    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\core\arrayprint.py:1534(_array_str_implementation)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\lib\stride_tricks.py:414(_broadcast_shape)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\lib\stride_tricks.py:474(_broadcast_arrays_dispatcher)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\lib\stride_tricks.py:536(<listcomp>)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\numpy\lib\stride_tricks.py:478(broadcast_arrays)
+        2    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(broadcast_arrays)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\scipy\ndimage\measurements.py:461(_safely_castable_to_int)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\scipy\ndimage\measurements.py:469(_stats)
+        2    0.000    0.000    0.000    0.000 C:\Users\mly509\gitRepo1\Nuclear-Fusion\.venv\lib\site-packages\scipy\ndimage\measurements.py:590(sum_labels)
+        2    0.000    0.000    0.000    0.000 {built-in method _abc._abc_instancecheck}
+        2    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+        2    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
+        2    0.000    0.000    0.000    0.000 {method 'copy' of 'dict' objects}
+        2    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+        2    0.000    0.000    0.000    0.000 {method 'discard' of 'set' objects}
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.all}
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.id}
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.locals}
+        2    0.001    0.001    0.002    0.001 {built-in method builtins.print}
+        2    0.000    0.000    0.000    0.000 {method 'max' of 'numpy.ndarray' objects}
+        2    0.000    0.000    0.000    0.000 {method 'min' of 'numpy.ndarray' objects}
+        2    0.000    0.000    0.000    0.000 {built-in method numpy.asarray}
+        2    0.000    0.000    0.000    0.000 {built-in method numpy.asanyarray}
+        2    0.000    0.000    0.000    0.000 {built-in method numpy.zeros}
+        1    0.001    0.001    0.003    0.003 c:\Users\mly509\gitRepo1\Nuclear-Fusion\CompuLab\epc1d_Opt.py:38(calc_density)
+        1    0.000    0.000    0.000    0.000 C:\Users\mly509\AppData\Local\Programs\Python\Python39\lib\_sitebuiltins.py:19(__call__)
+        1    0.000    0.000    0.003    0.003 c:\Users\mly509\gitRepo1\Nuclear-Fusion\CompuLab\epc1d_Opt.py:208(__init__)
+        1    0.000    0.000    0.001    0.001 c:\Users\mly509\gitRepo1\Nuclear-Fusion\CompuLab\epc1d_Opt.py:273(landau)
+        1    0.000    0.000    0.004    0.004 c:\Users\mly509\gitRepo1\Nuclear-Fusion\CompuLab\epc1d_Opt.py:304(main)
+        1    0.000    0.000    0.004    0.004 <string>:1(<module>)
+        1    0.000    0.000    0.000    0.000 {method 'close' of '_io.TextIOWrapper' objects}
+        1    0.000    0.000    0.004    0.004 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 {method 'astype' of 'numpy.ndarray' objects}
+        1    0.000    0.000    0.000    0.000 {method 'seed' of 'numpy.random.mtrand.RandomState' objects}
+        1    0.000    0.000    0.000    0.000 {method 'uniform' of 'numpy.random.mtrand.RandomState' objects}
+        1    0.000    0.000    0.000    0.000 {method 'normal' of 'numpy.random.mtrand.RandomState' objects}
+
+
