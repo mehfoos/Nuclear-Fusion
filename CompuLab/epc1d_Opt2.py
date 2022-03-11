@@ -278,7 +278,7 @@ def twostream(npart, L, vbeam=2):
 if __name__ == "__main__":
     # Generate initial condition
     #
-    if False:
+    if True:
         # 2-stream instability
         L = 100
         ncells = 20
