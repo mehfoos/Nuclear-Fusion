@@ -3,6 +3,25 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 
+# This function will calculate an R^2 values for your fit	
+def r_squared(data, fit):
+	""" Calculate the R^2 value of a fit, f, to a data set, x """
+	
+	if len(data) != len(fit):
+		print("Data and fit lists must be of equal length")
+		return None
+
+	m = np.sum(data)/len(data)
+	
+	# Sum of squares between data and mean
+	ss = np.sum((data-m)**2)
+	
+	# Sum of residuals between fit and data 
+	res = np.sum((data-fit)**2)
+		
+	# This is the definition of R^2
+	return 	1 - res/ss
+
 def gaussian(x, *params):
     A = params[0]
     x0 = params[1]
@@ -159,13 +178,16 @@ ev_to_K = 11606 # K/eV
 
 # Curve-fitted σλ
 σλ = popt3[2]*1e-10 # Centre spectrum's "c", for gaussian
+σλ_err = 1e-10*np.sqrt(np.diag(pcov3))[2] # / np.sqrt(np.size(wavelength[midPos,:]))
 
 # Calculated βth
 βth = σλ / (λi * np.sqrt(2) * np.sin(θ/2))
+βth_err = σλ_err / (λi * np.sqrt(2) * np.sin(θ/2))
 
 # Calculated Te
 Te_K = ((βth**2)*me*(c**2))/(2*kb)
-Te_eV = Te_K/ev_to_K
+Te_eV = Te_K/ev_to_K 
+Te_eV_err = 2*βth_err*βth*me*(c**2)/(2*kb)/ev_to_K 
 
 # Print everything
 print("λi: ", λi)
@@ -175,20 +197,26 @@ print("me: ", me)
 print("c: ", c)
 print("ev_to_K: ", ev_to_K)
 print("σλ: ", σλ)
+print("σλ_err: ", σλ_err)
 print("βth: ", βth)
+print("βth_err: ", βth_err)
 print("Te_K: ", Te_K)
 print("Te_eV: ", Te_eV)
+print("Te_eV_err: ", Te_eV_err)
 
 # Build Temperature profile for full data
 plt.close("all")
 
 # Initialise array for results
-Te_eV_arr = 
+Te_eV_arr = np.zeros_like(angle)
+Te_eV_sdErr_arr = np.zeros_like(angle)
+sdErr_arr = np.zeros_like(angle)
+rSq_arr = np.zeros_like(angle)
 
 for iPos in range(len(angle)):
 
     # Get attributes that can be handy for guess
-    rangeWavelength = np.max(wavelength[iPos,:]) - np.min(wavelength[iPos,:])
+    rangeWavelength = np.percentile(wavelength[iPos,:],99) - np.percentile(wavelength[iPos,:],10)
     maxI = intensity[iPos,:].argmax()
     peakWavelength = wavelength[iPos,maxI]
     amplitudeMax = max(intensity[iPos,:])
@@ -197,8 +225,27 @@ for iPos in range(len(angle)):
     guess = [amplitudeMax*1.2, peakWavelength, rangeWavelength*0.1, \
         amplitudeMax, peakWavelength-150, rangeWavelength*0.008, \
             amplitudeMax, peakWavelength+150, rangeWavelength*0.03]
-    popt, pcov = curve_fit(gaussian3, wavelength[iPos,:], intensity[iPos,:], guess)
-    sdErr = np.sqrt(np.diag(pcov)) / np.sqrt(np.size(wavelength[iPos,:]))
+    
+
+    try:
+        popt, pcov = curve_fit(gaussian3, wavelength[iPos,:], intensity[iPos,:], guess, \
+            bounds=([amplitudeMax, np.NINF, np.NINF, np.NINF, np.NINF, np.NINF, np.NINF, np.NINF, np.NINF],\
+                [amplitudeMax*1.5, np.inf, np.inf, np.inf, np.inf, np.inf, np.inf, np.inf, np.inf]), \
+                     maxfev = 5000)
+    except:
+        Te_eV_arr[iPos] = np.nan
+        sdErr_arr[iPos] = np.nan
+        rSq_arr[iPos] = np.nan
+        continue
+    sdErr_pos = np.sqrt(np.diag(pcov))[2] # / np.sqrt(np.size(wavelength[iPos,:]))
+    rSq_arr[iPos] = r_squared(intensity[iPos,:], gaussian3(wavelength[iPos,:], *popt))
+
+    # if R^2 is too low, then skip
+    if rSq_arr[iPos] < 0.9:
+        Te_eV_arr[iPos] = np.nan
+        sdErr_arr[iPos] = np.nan
+        continue
+
 
     # Position specific values for calculation
     θ_pos = angle[iPos] # Slice angle; assuming radian
@@ -206,13 +253,40 @@ for iPos in range(len(angle)):
 
     # Calculation
     βth_pos = σλ_pos / (λi * np.sqrt(2) * np.sin(θ_pos/2))
+    βth_pos_err = sdErr_pos*1e-10 / (λi * np.sqrt(2) * np.sin(θ_pos/2))
     Te_K_pos = ((βth_pos**2)*me*(c**2))/(2*kb)
     Te_eV_pos = Te_K_pos/ev_to_K
 
     # Add to array
+    Te_eV_arr[iPos] = Te_eV_pos
+    sdErr_arr[iPos] = sdErr_pos
+    Te_eV_sdErr_arr[iPos] = 2*βth_pos_err*βth_pos*me*(c**2)/(2*kb)/ev_to_K 
 
 
+    # # Debug
+    # print("iPos: ", iPos)
+    # print("Te_eV_arr[iPos]: ", Te_eV_arr[iPos])
+    # print("sdErr_arr[iPos]: ", sdErr_arr[iPos])
+    # yfit3_1 = gaussian(wavelength[iPos,:], *popt)
+    # guessFit = gaussian3(wavelength[midPos,:], *guess)
+    # figP4_3, axP4_3 = plt.subplots()
+    # axP4_3.plot(wavelength[iPos,:], intensity[iPos,:], lw=0, marker='.', label=r"Data; index = "+ str(iPos))
+    # axP4_3.plot(wavelength[iPos,:], yfit3_1, label=r"Gaussian Fit3" + " $R^{2}$=" + f"{rSq_arr[iPos]:.2f}")
+    # axP4_3.plot(wavelength[midPos,:], guessFit, lw=1, linestyle = "dashed", label=r"Guess Fit")
+    # axP4_3.set_title("Spectrum Intensity: Gaussian fit attempt3")
+    # axP4_3.set_xlabel("Wavelength [$10^{-10}$m]")
+    # axP4_3.set_ylabel("CCD Intensity")
+    # axP4_3.legend()
+    # plt.show()
 
+figP4_4, axP4_4 = plt.subplots()
+axP4_4.errorbar(radius,Te_eV_arr,yerr=Te_eV_sdErr_arr,label="Shot 17447", ecolor="red")# ,uplims=True, lolims=True)#,linestyle='none')
+axP4_4.set_title("Electron temperature profile for shot 17447")
+axP4_4.set_xlabel("Radius [m]")
+axP4_4.set_ylabel("$T_{e}$ [eV]")
+axP4_4.legend()
+axP4_4.set_ylim(0,600)
+plt.show()
 
 
 
