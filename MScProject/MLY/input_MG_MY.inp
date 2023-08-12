@@ -1,0 +1,188 @@
+
+Created by GS2 at 2023-08-12T15:39:43.075Z+01:00
+GS2 version: 8.1.2
+Run UUID: 2D0F0410-5F2D-4874-B318-4812377E4B77
+GK_SYSTEM: gnu_ubuntu
+Compiler: gfortran
+Input parameters as set by ingen
+
+ &layouts_knobs
+ layout = "xyles"
+ local_field_solve = F
+ /
+
+ &collisions_knobs
+ cfac =  1.000
+ heating = F
+ /
+
+ &init_g_knobs
+ ginit_option = "random_sine"
+ phiinit =  0.1000000000E-03
+ zf_init =  0.1000000000E+01
+ max_mode = 128
+ /
+
+ &dist_fn_knobs
+ boundary_option = "default"
+ nonad_zero = T
+ gridfac =  0.1000000000E+01
+ esv = F
+ wfb_cmr = F
+ opt_source = T
+ /
+
+ &fields_knobs
+ field_option = "local"
+ minNrow = 16
+ do_smart_update = F
+ /
+
+ &kt_grids_knobs
+ grid_option = "range"
+ /
+
+ &kt_grids_range_parameters
+ naky =  15
+ aky_min =  0.9428090415E-01
+ aky_max =  0.1414213562E+01
+ nn0 =   1
+ n0_min =          0
+ n0_max =          0
+ rhostar_range =  0.1000000000E-03
+ ntheta0 =   1
+ theta0_min =  0.0000000000E+00
+ theta0_max =  0.0000000000E+00
+ akx_min =  0.0000000000E+00
+ akx_max =  0.0000000000E+00
+ kyspacing_option = linear
+ /
+
+ &le_grids_knobs
+ nesub =    7
+ nesuper =    1
+ ngauss =    5
+ vcut =  0.2500000000E+01
+ /
+
+ &parameters
+ beta =  0.1000000000E-01
+ zeff =  0.1000000000E+01
+ /
+
+ &knobs
+ fphi   =  1.000
+ fapar  =  1.000
+ fbpar =  1.000
+ delt =  0.1000000000E+00
+ max_sim_time =  0.1000000000E+07
+ nstep =    20000
+ wstar_units = F
+ margin =  0.5000000000E-01
+ immediate_reset = T
+ /
+
+ &species_knobs
+ nspec =  2
+ /
+
+ &species_parameters_1
+ z =  0.100000E+01
+ mass =  0.100000E+01
+ dens =  0.100000E+01
+ temp =  0.100000E+01
+ tprim =  0.249000E+01
+ fprim =  0.800000E+00
+ uprim =  0.000000E+00
+ vcrit = -0.100000E+01
+ vcprim = -0.999900E+03
+ vnewk =  0.118087E-03
+ type = "ion" /
+ f0type = "maxwellian" /
+ dens0 =  0.100000E+01
+
+ &species_parameters_2
+ z = -0.100000E+01
+ mass =  0.270000E-03
+ dens =  0.100000E+01
+ temp =  0.100000E+01
+ tprim =  0.249000E+01
+ fprim =  0.800000E+00
+ uprim =  0.000000E+00
+ vcrit = -0.100000E+01
+ vcprim = -0.999900E+03
+ vnewk =  0.707100E-02
+ type = "electron"  /
+ f0type = "maxwellian" /
+ dens0 =  0.100000E+01
+
+ &dist_fn_species_knobs_1
+ fexpr =  0.480000E+00
+ bakdif =  0.500000E-01
+ bd_exp =      0  /
+
+ &dist_fn_species_knobs_2
+ fexpr =  0.480000E+00
+ bakdif =  0.500000E-01
+ bd_exp =      0  /
+
+ &theta_grid_parameters
+ ntheta =     24
+ nperiod =     3
+ rhoc =      0.5000
+ Rmaj =      2.7778
+ R_geo =     2.7778
+ eps =       0.1800
+ epsl =      0.3000
+ qinp =      1.4000
+ shat =      0.8000
+ alpmhd =    0.0000
+ pk =        0.3000
+ kp =       -1.0000
+ geoType =     0
+ aSurf =     1.0000
+ shift =     0.0000
+ shiftVert = 0.0000
+ mMode =       2
+ nMode =       3
+ deltam =    1.0000
+ deltan =    0.0000
+ deltampri = 0.0000
+ deltanpri = 0.0000
+ thetam =    0.0000
+ thetan =    0.0000
+ btor_slab = 0.0000
+ /
+
+ &theta_grid_knobs
+ equilibrium_option = "eik"
+ gb_to_cv = F
+ /
+
+ &theta_grid_eik_knobs
+ itor =   1
+ iflux =   0
+ irho =   2
+ ppl_eq =   F
+ efit_eq =  F
+ gen_eq =   F
+ dfit_eq =  F
+ local_eq =  T
+ transp_eq =  F
+ gs2d_eq =  F
+ chs_eq =  F
+ equal_arc =  T
+ bishop =   4
+ s_hat_input =   0.800000E+00
+ alpha_input =   0.000000E+00
+ invLp_input =   0.000000E+00
+ beta_prime_input =   0.000000E+00
+ dp_mult =   0.100000E+01
+ delrho =   0.100000E-02
+ rmin =   0.100000E-02
+ rmax =   0.100000E+01
+ isym =  0
+ writelots =  F
+ eqfile = "default_unset_value"
+ /
+

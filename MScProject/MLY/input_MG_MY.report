@@ -1,0 +1,200 @@
+
+Created by GS2 at 2023-08-12T15:39:43.075Z+01:00
+GS2 version: 8.1.2
+Run UUID: 2D0F0410-5F2D-4874-B318-4812377E4B77
+GK_SYSTEM: gnu_ubuntu
+Compiler: gfortran
+Input file report from ingen
+
+------------------------------------------------------------
+
+nmesh=(2*ntgrid+1)*2*nlambda*negrid*ntheta0*naky*nspec
+Number of meshpoints:           1161600
+            ntgrid=          60
+        2*ntgrid+1=         121
+           nlambda=          20
+            negrid=           8
+           ntheta0=           1
+                nx=           0
+              naky=          15
+                ny=           0
+             nspec=           2
+
+Layout = xyles
+
+Recommended #proc up to:  100000
+
+Recommended numbers of processors:
+  npe =        1
+  npe =        2
+  npe =        4
+  npe =        8
+
+Collisions using le_lo
+#proc sweetspots for le_lo, up to:  100000
+  npe =        1  (s)
+  npe =        2  (s)
+  npe =        6  (y)
+  npe =       10  (y)
+  npe =       30  (y)
+  npe =      330  (tg)
+  npe =     3630  (tg)
+
+------------------------------------------------------------
+
+Number of species:   2
+
+  Species   1
+    Type:             Ion
+    Charge:           1.000
+    Mass:              1.0000E+00
+    Density:          1.000
+    Temperature:      1.000
+    Collisionality:    1.1809E-04
+    Normalized Inverse Gradient Scale Lengths:
+      Temperature:    2.490
+      Density:        0.800
+      Parallel v:     0.000
+
+  Species   2
+    Type:             Electron
+    Charge:          -1.000
+    Mass:              2.7000E-04
+    Density:          1.000
+    Temperature:      1.000
+    Collisionality:    7.0710E-03
+    Normalized Inverse Gradient Scale Lengths:
+      Temperature:    2.490
+      Density:        0.800
+      Parallel v:     0.000
+
+------------------------------------------------------------
+Calculated Z_eff:   1.000
+
+------------------------------------------------------------
+
+GS2 beta parameter =    0.0100
+Total beta =    0.0200
+
+The total normalized inverse pressure gradient scale length is     3.2900
+corresponding to d beta / d rho =    -0.0658
+
+------------------------------------------------------------
+
+
+The following local equilibrium model has been selected:
+Miller
+The aspect ratio R/a =  2.7778
+
+The safety factor q =       1.4000
+and epsilon == r/R =        0.1800
+
+Trapped particles are included.
+
+B_poloidal is determined by:
+
+    deltam =        1.0000
+    deltan =         0.0000
+
+  & gradient: d deltam /d rho =    0.0000
+  & gradient: d deltan /d rho =  0.0000
+
+    thetam =        0.0000
+    thetan =         0.0000
+
+    shift =         0.0000
+    shiftVert =     0.0000
+
+The magnetic shear s_hat =  0.8000
+This value is set by s_hat_input in the theta_grid_eik_knobs namelist.
+The beta gradient d beta / d rho =   0.0000
+
+################# WARNING #######################
+beta_prime_input is not consistent with beta and Lp.
+beta_prime_input=0.0000 dbeta_drho (from species)=-.0658
+THIS IS PROBABLY AN ERROR.
+################# WARNING #######################
+
+
+------------------------------------------------------------
+
+Full GS2 collision operator has been selected.
+
+------------------------------------------------------------
+
+The field equations will be advanced in time implicitly with decomposition respecting g_lo layout.
+Using a min block size of 16
+
+------------------------------------------------------------
+
+Initial conditions:
+  Amplitude:            0.0001
+  Zonal amplitude:      1.0000
+  Max mode:         128
+ Random sum of sine waves up to max_mode mode number
+
+------------------------------------------------------------
+
+
+This is a linear calculation.
+
+The time step (code_dt) = 0.1000E+00
+The time step (user_dt) = 0.1000E+00
+The maximum number of time steps is   20000
+
+Data will be written to /home/mly509/GithubCloneMly/Nuclear-Fusion/MScProject/gs2/MLY/input_MG_MY.out.nc every    0 timesteps.
+
+
+A range of k_perps will be evolved.
+
+There are  15 values of ky rho and   1 values of theta_0/kx rho:
+
+ky rho =  0.9428E-01 theta0 =  0.0000E+00 kx rho =  0.0000E+00
+ky rho =  0.1886E+00 theta0 =  0.0000E+00 kx rho =  0.0000E+00
+ky rho =  0.2828E+00 theta0 =  0.0000E+00 kx rho =  0.0000E+00
+ky rho =  0.3771E+00 theta0 =  0.0000E+00 kx rho =  0.0000E+00
+ky rho =  0.4714E+00 theta0 =  0.0000E+00 kx rho =  0.0000E+00
+ky rho =  0.5657E+00 theta0 =  0.0000E+00 kx rho =  0.0000E+00
+ky rho =  0.6600E+00 theta0 =  0.0000E+00 kx rho =  0.0000E+00
+ky rho =  0.7542E+00 theta0 =  0.0000E+00 kx rho =  0.0000E+00
+ky rho =  0.8485E+00 theta0 =  0.0000E+00 kx rho =  0.0000E+00
+ky rho =  0.9428E+00 theta0 =  0.0000E+00 kx rho =  0.0000E+00
+ky rho =  0.1037E+01 theta0 =  0.0000E+00 kx rho =  0.0000E+00
+ky rho =  0.1131E+01 theta0 =  0.0000E+00 kx rho =  0.0000E+00
+ky rho =  0.1226E+01 theta0 =  0.0000E+00 kx rho =  0.0000E+00
+ky rho =  0.1320E+01 theta0 =  0.0000E+00 kx rho =  0.0000E+00
+ky rho =  0.1414E+01 theta0 =  0.0000E+00 kx rho =  0.0000E+00
+
+------------------------------------------------------------
+
+
+Outgoing boundary conditions will be used.
+Parallel bc for passing particles at ends of the domain is:
+                   g_wesson = g_krt = 0
+ie NO incoming particles in the nonadiabatic piece of delta(f)
+
+
+------------------------------------------------------------
+
+The ExB parameter is  0.0000
+
+------------------------------------------------------------
+
+
+The standard GK equation will be solved.
+
+Species  1 has fexpr =  0.4800E+00
+Species  2 has fexpr =  0.4800E+00
+
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+
+A_parallel will be included in the calculation.
+B_parallel will be included in the calculation.
+
+The time step will be reset immediately after cfl violation detected.
+
+The random number generator will use a seed derived from use input, 100.
+

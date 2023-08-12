@@ -1,0 +1,32 @@
+ Created by GS2 at 2023-07-27T12:46:41.435Z+01:00
+ GS2 version: 8.1.2
+ Run UUID: 5C267109-637C-4114-B744-2B002C42191E
+ GK_SYSTEM: viking
+ Compiler: intel
+
+Running on 6 processors
+
+
+ Initialization              0.194 min    2.6 %
+ Advance steps               7.401 min   97.3 %
+(field solve                 1.429 min   18.8 %)
+(field solve mpi             1.035 min   13.6 %)
+(collisions                  3.717 min   48.9 %)
+(collisions mpi              0.215 min    2.8 %)
+(explicit/nl                 0.000 min    0.0 %)
+(explicit/nl mpi             0.000 min    0.0 %)
+(explicit/nl fft             0.000 min    0.0 %)
+(diagnostics                 0.859 min   11.3 %)
+ Re-initialize               0.000 min    0.0 %
+ Redistribute                0.848 min   11.2 %
+(redistribute mpi            0.215 min    2.8 %)
+(redistribute copy           0.634 min    8.3 %)
+ Finishing                   0.000 min    0.0 %
+ MPI                         2.096 min   27.6 %
+(Overheads                   0.000 min    0.0 %)
+(Collectives                 1.881 min   24.7 %)
+(PTP                         0.004 min    0.0 %)
+(Sync                        0.211 min    2.8 %)
+ total from timer is:     7.60 min
+
+Run finished at 2023-07-27T12:54:17.583Z+01:00
