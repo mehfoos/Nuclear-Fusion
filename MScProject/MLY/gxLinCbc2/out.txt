@@ -1,0 +1,33 @@
+ Created by GS2 at 2023-08-13T21:24:13.848Z+01:00
+ GS2 version: 8.1.2
+ Run UUID: 505F3F50-2F4E-4453-9517-6B5F42720B65
+ GK_SYSTEM: viking
+ Compiler: intel
+
+Running on 6 processors
+
+WARNING: diagnostic 'write_nl_flux' is (currently) non-functional in new diagnostics module. This will have no effect.
+
+ Initialization              0.220 min    3.5 %
+ Advance steps               6.136 min   96.4 %
+(field solve                 0.534 min    8.4 %)
+(field solve mpi             0.090 min    1.4 %)
+(collisions                  4.187 min   65.7 %)
+(collisions mpi              0.171 min    2.7 %)
+(explicit/nl                 0.000 min    0.0 %)
+(explicit/nl mpi             0.000 min    0.0 %)
+(explicit/nl fft             0.000 min    0.0 %)
+(diagnostics                 0.092 min    1.5 %)
+ Re-initialize               0.000 min    0.0 %
+ Redistribute                0.923 min   14.5 %
+(redistribute mpi            0.171 min    2.7 %)
+(redistribute copy           0.752 min   11.8 %)
+ Finishing                   0.000 min    0.0 %
+ MPI                         0.340 min    5.3 %
+(Overheads                   0.000 min    0.0 %)
+(Collectives                 0.169 min    2.7 %)
+(PTP                         0.003 min    0.1 %)
+(Sync                        0.168 min    2.6 %)
+ total from timer is:     6.37 min
+
+Run finished at 2023-08-13T21:30:35.937Z+01:00
