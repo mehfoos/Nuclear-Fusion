@@ -19,7 +19,8 @@
 			"pyro",
 			"pyrokinetics",
 			"Pyrokinetics",
-			"statsmodels"
+			"statsmodels",
+			"Tokamak"
 		]
 	}
 	

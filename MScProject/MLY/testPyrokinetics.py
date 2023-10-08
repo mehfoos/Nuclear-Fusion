@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Test/Play with Pyrokinetics + GS2
+GX results replication using GS2
 """
 
 __author__ = "Mehfoos"
@@ -8,6 +8,8 @@ __version__ = "0.1.0"
 __license__ = "MIT"
 
 from pyrokinetics import Pyro, template_dir, normalisation
+import matplotlib.pyplot as plt
+import math
 
 def main():
     """ Main entry point of the app """ 
@@ -15,10 +17,6 @@ def main():
     # Path configurations
     # inputFilePath = "/home/mly509/GithubCloneMly/Nuclear-Fusion/MScProject/MLY/gxLinCbc1/gxLinCbc1.in"
     inputFilePath = "/home/mly509/GithubCloneMly/Nuclear-Fusion/MScProject/MLY/gxLinCbc2/gxLinCbc2.in"
-    # inputFilePath = "/home/mly509/GithubCloneMly/Nuclear-Fusion/MScProject/MLY/gxLinCbc2/gxLinCbc2.used_inputs.in"
-    # inputFilePath = "/home/mly509/GithubCloneMly/Nuclear-Fusion/MScProject/MLY/test1/input_MG_MY.in"
-    outputFilePath = "/home/mly509/GithubCloneMly/Nuclear-Fusion/MScProject/MLY/gxLinCbc2/gxLinCbc2.out.nc"
-    # gs2_template = template_dir / "outputs/GS2_linear/gs2.in"
         
     # instantiating the Pyro class as pyro object.
     pyro = Pyro(gk_file=inputFilePath, gk_code="GS2")
@@ -27,11 +25,10 @@ def main():
     print("GK code check pass?: ", pyro.check_gk_code())
 
     # Load GS2 output data
-    pyro.load_gk_output(path=outputFilePath, local_norm=None, \
-        load_fields=True, load_fluxes=True, load_moments=False)
+    pyro.load_gk_output()
 
     # Print all the data
-    print(pyro.gk_output.data_vars)
+    #print(pyro.gk_output.data_vars)
 
     # Extract signals
     ky = pyro.gk_output["ky"]
@@ -40,10 +37,29 @@ def main():
     mode_freq = pyro.gk_output["mode_frequency"]
 
     # Plot signals
+    plt.figure(1)
+    growth_rate.isel(kx=0,time=growth_rate.time.size-1).plot.line(x='ky')
     
+    ## Plot after scaling
+
+    # Convert to np array
+    growth_rate_np = growth_rate.isel(kx=0,time=growth_rate.time.size-1).to_numpy()
+    ky_np = growth_rate.ky.to_numpy()
+
+    # Scale to GX paper levels
+    growth_rate_np_GX = growth_rate_np/math.sqrt(2)
+    ky_np_GX = ky_np/math.sqrt(2)
+    
+    # Plot
+    plt.figure(2)
+    plt.plot(ky_np_GX,growth_rate_np_GX)
+    plt.ylabel('growth_rate_np_GX')
+    plt.xlabel('ky_np_GX')
+    plt.suptitle('Normalised growth rate vs binormal wavenumber')
+    plt.title('at kx=0; last time value')
 
 
-    #
+    plt.show()
 
 if __name__ == "__main__":
     """ This is executed when run from the command line """
