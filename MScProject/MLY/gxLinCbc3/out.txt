@@ -1,0 +1,33 @@
+ Created by GS2 at 2023-10-15T21:29:59.284Z+01:00
+ GS2 version: 8.1.2
+ Run UUID: 5B1D195D-6036-415F-8967-0D2222270425
+ GK_SYSTEM: ypi_server
+ Compiler: gfortran
+
+Running on 32 processors
+
+WARNING: diagnostic 'write_nl_flux' is (currently) non-functional in new diagnostics module. This will have no effect.
+
+ Initialization              0.083 min    4.5 %
+ Advance steps               1.756 min   95.4 %
+(field solve                 0.282 min   15.3 %)
+(field solve mpi             0.186 min   10.1 %)
+(collisions                  1.137 min   61.7 %)
+(collisions mpi              0.350 min   19.0 %)
+(explicit/nl                 0.000 min    0.0 %)
+(explicit/nl mpi             0.000 min    0.0 %)
+(explicit/nl fft             0.000 min    0.0 %)
+(diagnostics                 0.012 min    0.6 %)
+ Re-initialize               0.000 min    0.0 %
+ Redistribute                0.523 min   28.4 %
+(redistribute mpi            0.350 min   19.0 %)
+(redistribute copy           0.173 min    9.4 %)
+ Finishing                   0.000 min    0.0 %
+ MPI                         0.556 min   30.2 %
+(Overheads                   0.000 min    0.0 %)
+(Collectives                 0.206 min   11.2 %)
+(PTP                         0.012 min    0.6 %)
+(Sync                        0.338 min   18.4 %)
+ total from timer is:     1.84 min
+
+Run finished at 2023-10-15T21:31:49.784Z+01:00
