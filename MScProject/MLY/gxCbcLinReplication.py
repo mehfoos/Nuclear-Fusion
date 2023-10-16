@@ -19,7 +19,7 @@ def main():
     ### IMPORT AND EXTRACT DATA
 
     # Path configurations
-    inputFilePath = "/home/mly509/GithubCloneMly/Nuclear-Fusion/MScProject/MLY/gxLinCbc5/gxLinCbc5.in"
+    inputFilePath = "/home/mly509/GithubCloneMly/Nuclear-Fusion/MScProject/MLY/gxLinCbc7/gxLinCbc7.in"
         
     # instantiating the Pyro class as pyro object.
     pyro = Pyro(gk_file=inputFilePath, gk_code="GS2")
