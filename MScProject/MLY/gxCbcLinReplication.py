@@ -19,7 +19,7 @@ def main():
     ### IMPORT AND EXTRACT DATA
 
     # Path configurations
-    inputFilePath = "/home/mly509/GithubCloneMly/Nuclear-Fusion/MScProject/MLY/gxLinCbc7/gxLinCbc7.in"
+    inputFilePath = "/home/mly509/GithubCloneMly/Nuclear-Fusion/MScProject/MLY/gxLinCbc8/gxLinCbc8.in"
         
     # instantiating the Pyro class as pyro object.
     pyro = Pyro(gk_file=inputFilePath, gk_code="GS2")
@@ -39,13 +39,13 @@ def main():
     ### FILTER /PROCESS DATA
     
     # Get the final growth rate and frequencies
-    growth_rate_final = growth_rate.isel(kx=0).max('time')
-    mode_freq_final = mode_freq.isel(kx=0).max('time')
+    growth_rate_final = growth_rate.isel(kx=0,time=-1)
+    mode_freq_final = mode_freq.isel(kx=0,time=-1)
     
     # Get the final growth rate adjusted/scaled as in GX (including coordinates)
-    growth_rate_finalGX = growth_rate_final*math.sqrt(2)
+    growth_rate_finalGX = growth_rate_final #*math.sqrt(2)
     # growth_rate_finalGX = growth_rate_finalGX.assign_coords(ky=growth_rate_finalGX.ky/math.sqrt(2))
-    mode_freq_finalGX = mode_freq_final*math.sqrt(2)
+    mode_freq_finalGX = mode_freq_final #*math.sqrt(2)
 
     # Check if equilibrium has been reached
     growth_rate_4thQaurterMean = growth_rate.isel(kx=0).where(growth_rate.time>growth_rate.time[-1]/4).mean('time')
@@ -85,21 +85,23 @@ def main():
 
     ## Plot GX paper figure 2.a.top
     fig, axs = plt.subplots(2,1,layout="constrained")
-    (growth_rate_finalGX).plot.line(x='ky',color="black",marker="o",label="Replication", ax=axs[0])
-    GxFig2ATopGs2.plot(x="x",y="y",label="From GX paper", color="orange",marker="s", markerfacecolor='none', linestyle='None', ax=axs[0])
-    GxFig2ATopGx.plot(x="x",y="y",label="From GX paper", color="blue",marker="x", markerfacecolor='none', linestyle='None', ax=axs[0])
+    (growth_rate_finalGX).plot.line(x='ky',color="black",marker="o",label="GS2 Replication", ax=axs[0])
+    GxFig2ATopGs2.plot(x="x",y="y",label="GS2 (GX paper)", color="orange",marker="s", markerfacecolor='none', linestyle='None', ax=axs[0])
+    GxFig2ATopGx.plot(x="x",y="y",label="GX (GX paper)", color="blue",marker="x", markerfacecolor='none', linestyle='None', ax=axs[0])
     plt.suptitle('Replication attempt: GX Figure2 a)')
     axs[0].set_title('Normalised Growth Rates Frequencies')
     axs[0].set_xlabel('Normalised binormal wavenumber $k_y$')
+    axs[0].legend()
     plt.ylim((0.0,0.28))
     axs[0].set_yticks((0.00,0.1,0.2))
     axs[0].minorticks_on()
 
     ## Plot GX paper figure 2.a.bottom
-    (mode_freq_finalGX).plot.line(x='ky',color="black",marker="o",label="Replication", ax=axs[1])
-    GxFig2ABottomGs2.plot(x="x",y="y",label="From GX paper", color="orange",marker="s", markerfacecolor='none', linestyle='None', ax=axs[1])
-    GxFig2ABottomGx.plot(x="x",y="y",label="From GX paper", color="blue",marker="x", markerfacecolor='none', linestyle='None', ax=axs[1])
+    (mode_freq_finalGX).plot.line(x='ky',color="black",marker="o",label="GS2 Replication", ax=axs[1])
+    GxFig2ABottomGs2.plot(x="x",y="y",label="GS2 (GX paper)", color="orange",marker="s", markerfacecolor='none', linestyle='None', ax=axs[1])
+    GxFig2ABottomGx.plot(x="x",y="y",label="GX (GX paper)", color="blue",marker="x", markerfacecolor='none', linestyle='None', ax=axs[1])
     axs[1].sharex(axs[0])
+    axs[0].legend()
     plt.xlabel('Normalised binormal wavenumber $k_y$')
     plt.title('Real (Mode) Frequencies')
     plt.xlim((0.0,1.7))
