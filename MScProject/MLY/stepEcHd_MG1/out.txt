@@ -1,0 +1,42 @@
+ Created by GS2 at 2023-10-29T01:34:12.308Z+00:00
+ GS2 version: 8.1.2-1791-g40da52e9
+ Run UUID: 624B7031-317C-4653-9777-661E4B24713C
+ GK_SYSTEM: viking
+ Compiler: gfortran
+ Build tag: None
+
+Running on 8 processors with 16 threads 
+
+ r_bar =   0.63676925245142313     
+
+ d beta/d rho =    0.0000000000000000      ,  -0.50449999999999995     
+ s_hat    11.417297601213049      ,    1.2049768696748901     
+
+ Initialization              0.095 min    4.3 %
+(field matrix invert         0.002 min    0.1 %)
+(field matrix invert mpi     0.000 min    0.0 %)
+(field matrix dump           0.000 min    0.0 %)
+(field matrix read           0.000 min    0.0 %)
+ Advance steps               2.110 min   95.0 %
+(field solve                 0.579 min   26.1 %)
+(field solve mpi             0.492 min   22.1 %)
+(collisions                  1.351 min   60.9 %)
+(collisions mpi              0.605 min   27.3 %)
+(explicit/nl                 0.000 min    0.0 %)
+(explicit/nl mpi             0.000 min    0.0 %)
+(explicit/nl fft             0.000 min    0.0 %)
+(explicit/nl fields          0.000 min    0.0 %)
+(diagnostics                 0.012 min    0.5 %)
+ Re-initialize               0.000 min    0.0 %
+ Redistribute                0.741 min   33.3 %
+(redistribute mpi            0.606 min   27.3 %)
+(redistribute copy           0.135 min    6.1 %)
+ Finishing                   0.001 min    0.0 %
+ MPI                         1.141 min   51.4 %
+(Overheads                   0.000 min    0.0 %)
+(Collectives                 0.535 min   24.1 %)
+(PTP                         0.002 min    0.1 %)
+(Sync                        0.604 min   27.2 %)
+ total from timer is:     2.22 min
+
+Run finished at 2023-10-29T01:36:25.663Z+00:00

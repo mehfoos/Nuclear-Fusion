@@ -2,6 +2,7 @@
 """
 GX linear CBC results replication using GS2
 (Tokamak benchmark: Cyclone base case; kinetic electrons)
+Fig2b replication
 """
 
 __author__ = "Mehfoos"
@@ -19,7 +20,7 @@ def main():
     ### IMPORT AND EXTRACT DATA
 
     # Path configurations
-    inputFilePath = "/home/mly509/GithubCloneMly/Nuclear-Fusion/MScProject/MLY/gxLinCbc8/gxLinCbc8.in"
+    inputFilePath = "/home/mly509/GithubCloneMly/Nuclear-Fusion/MScProject/MLY/gxLinCbc9/gxLinCbc9.in"
         
     # instantiating the Pyro class as pyro object.
     pyro = Pyro(gk_file=inputFilePath, gk_code="GS2")
@@ -57,10 +58,10 @@ def main():
 
 
     ### GX paper data
-    GxFig2ATopGs2 = pd.read_csv('MScProject/MLY/GxFig2ATopGs2.csv',skipinitialspace=True)
-    GxFig2ATopGx = pd.read_csv('MScProject/MLY/GxFig2ATopGx.csv',skipinitialspace=True)
-    GxFig2ABottomGs2 = pd.read_csv('MScProject/MLY/GxFig2ABottomGs2.csv',skipinitialspace=True)
-    GxFig2ABottomGx = pd.read_csv('MScProject/MLY/GxFig2ABottomGx.csv',skipinitialspace=True)
+    GxFig2ATopGs2 = pd.read_csv('MScProject/MLY/GxFig2BTopGs2.csv',skipinitialspace=True)
+    GxFig2ATopGx = pd.read_csv('MScProject/MLY/GxFig2BTopGx.csv',skipinitialspace=True)
+    GxFig2ABottomGs2 = pd.read_csv('MScProject/MLY/GxFig2BBottomGs2.csv',skipinitialspace=True)
+    GxFig2ABottomGx = pd.read_csv('MScProject/MLY/GxFig2BBottomGx.csv',skipinitialspace=True)
 
     ### PLOT DATA
 
@@ -83,7 +84,7 @@ def main():
     # mode_freq_final.plot.line(x='ky')
     # plt.suptitle('Mode Frequencies where kx=0 and time is the max of each series')
 
-    ## Plot GX paper figure 2.a.top
+    ## Plot GX paper figure 2.b.top
     fig, axs = plt.subplots(2,1,layout="constrained")
     (growth_rate_finalGX).plot.line(x='ky',color="black",marker="o",label="GS2 Replication", ax=axs[0])
     GxFig2ATopGs2.plot(x="x",y="y",label="GS2 (GX paper)", color="orange",marker="s", markerfacecolor='none', linestyle='None', ax=axs[0])
@@ -92,11 +93,11 @@ def main():
     axs[0].set_title('Normalised Growth Rates Frequencies')
     axs[0].set_xlabel('Normalised binormal wavenumber $k_y$')
     axs[0].legend()
-    plt.ylim((0.0,0.28))
-    axs[0].set_yticks((0.00,0.1,0.2))
+    plt.ylim((0.0,9.1))
+    axs[0].set_yticks((0.00,5))
     axs[0].minorticks_on()
 
-    ## Plot GX paper figure 2.a.bottom
+    ## Plot GX paper figure 2.b.bottom
     (mode_freq_finalGX).plot.line(x='ky',color="black",marker="o",label="GS2 Replication", ax=axs[1])
     GxFig2ABottomGs2.plot(x="x",y="y",label="GS2 (GX paper)", color="orange",marker="s", markerfacecolor='none', linestyle='None', ax=axs[1])
     GxFig2ABottomGx.plot(x="x",y="y",label="GX (GX paper)", color="blue",marker="x", markerfacecolor='none', linestyle='None', ax=axs[1])
@@ -104,10 +105,10 @@ def main():
     axs[0].legend()
     plt.xlabel('Normalised binormal wavenumber $k_y$')
     plt.title('Real (Mode) Frequencies')
-    plt.xlim((0.0,1.7))
-    plt.ylim((-1,1))
-    plt.xticks((0.00,0.25,0.50,0.75,1.00,1.25,1.50))
-    plt.yticks((-1,-0.5,0,0.5,1))
+    plt.xlim((0.0,50))
+    plt.ylim((-40,0))
+    plt.xticks((0,10,20,30,40,50))
+    plt.yticks((-40,-20))
     plt.minorticks_on()
 
     plt.show()

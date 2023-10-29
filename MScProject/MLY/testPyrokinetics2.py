@@ -2,7 +2,7 @@ from pyrokinetics import Pyro
 
 import matplotlib.pyplot as plt
 
-inputFilePath = "/home/mly509/GithubCloneMly/Nuclear-Fusion/MScProject/MLY/gxLinCbc2/gxLinCbc2.in"
+inputFilePath = "/home/mly509/GithubCloneMly/Nuclear-Fusion/MScProject/MLY/stepEcHd_MG1/input.in"
 
 pyro = Pyro(gk_file=inputFilePath, gk_code='GS2')
 
