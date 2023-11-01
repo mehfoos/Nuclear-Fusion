@@ -1,0 +1,21 @@
+Running GS2 code with 8 tasks and 32 cpus per task.
+
+============================
+ Job utilisation efficiency
+============================
+
+Job ID: 35114
+Cluster: viking2.yor.alces.network
+User/Group: mly509/clusterusers
+State: FAILED (exit code 2)
+Nodes: 3
+Cores per node: 85
+CPU Utilized: 00:01:08
+CPU Efficiency: 2.66% of 00:42:40 core-walltime
+Job Wall-clock time: 00:00:10
+Memory Utilized: 8.23 MB (estimated maximum)
+Memory Efficiency: 0.01% of 125.00 GB (500.00 MB/core)
+ Requested wall clock time: 02:00:00
+    Actual wall clock time: 00:00:10
+Wall clock time efficiency: 0.1%
+           Job queued time: 00:00:01

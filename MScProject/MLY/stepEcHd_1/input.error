@@ -1,0 +1,5 @@
+Cannot use kyspacing_option='exponential' with aky_min<=0.0 --> setting to'linear'
+Warning: toroidal mode number range setup would lead to non-integer
+         mode numbers --> Attempting to adjust range slightly.
+Elapse time    6900.1602 exceeds available time   6900.0000
+  (Given CPU time:    7200.0000  Margin:     300.0000)

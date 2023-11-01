@@ -1,0 +1,6 @@
+
+		begin
+      f = addfile("/home/mly509/GithubCloneMly/Nuclear-Fusion/MScProject/MLY/stepEcHd_MG2/input.out.nc","r")
+      print(f)
+		end
+    
