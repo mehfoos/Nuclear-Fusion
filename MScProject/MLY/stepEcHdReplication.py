@@ -14,7 +14,7 @@ import pandas as pd
 ### IMPORT AND EXTRACT DATA
 
 # Path configurations
-inputFilePath = "/home/mly509/GithubCloneMly/Nuclear-Fusion/MScProject/MLY/stepEcHd_1/input.in"
+inputFilePath = "/home/mly509/GithubCloneMly/Nuclear-Fusion/MScProject/MLY/stepEcHd_2/input.in"
         
 # instantiating the Pyro class as pyro object.
 pyro = Pyro(gk_file=inputFilePath, gk_code="GS2")
@@ -53,8 +53,8 @@ else:
 ###
 
 ### STEP paper data
-# DataFig2A = pd.read_csv('MScProject/MLY/GxFig2ATopGs2.csv',skipinitialspace=True)
-# DataFig2B = pd.read_csv('MScProject/MLY/GxFig2ABottomGs2.csv',skipinitialspace=True)
+DataFig2A = pd.read_csv('MScProject/MLY/Step1Fig2a_psi0.49_growth.csv',skipinitialspace=True)
+DataFig2B = pd.read_csv('MScProject/MLY/Step1Fig2b_psi0.49_modefreq.csv',skipinitialspace=True)
 ###
 
 ### PLOT DATA
@@ -72,12 +72,14 @@ mode_freq.isel(kx=0).plot.line(x='time')
 
 fig, ax = plt.subplots()
 # Extract growth rate where kx=0 and time is the max of each series and plot against ky.
-growth_rate_final.plot.line(x='ky')
+(1*growth_rate_final).plot.line(x='ky',marker="o",label="GS2 Replication", ax=ax)
+DataFig2A.plot(x="x",y="y",label="psi=0.49 (STEP paper)", color="orange",marker="s", markerfacecolor='none', linestyle='None', ax=ax)
 plt.suptitle('Growth rate where kx=0 and time is the max of each series')
 
 fig, ax = plt.subplots()
 # Extract growth rate where kx=0 and time is the max of each series and plot against ky.
-mode_freq_final.plot.line(x='ky')
+(1*mode_freq_final).plot.line(x='ky', ax=ax)
+DataFig2B.plot(x="x",y="y",label="psi=0.49 (STEP paper)", color="orange",marker="s", markerfacecolor='none', linestyle='None', ax=ax)
 plt.suptitle('Mode Frequencies where kx=0 and time is the max of each series')
 ##
 

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#SBATCH --job-name=qmin
+#SBATCH --mail-type=END,FAIL             # Mail events (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=mly509@york.ac.uk      # Where to send mail
+#SBATCH --account=pet-gspt-2019
+#SBATCH --time=96:00:00
+#SBATCH --ntasks=960
+#SBATCH --cpus-per-task=1
+#SBATCH --partition=nodes
+
+ulimit -s unlimited
+
+source /users//mly509/t3d
+source /users//mly509/t3d/testing/bin/activate
+
+export OMP_NUM_THREADS=1
+t3d input_step.in | tee out

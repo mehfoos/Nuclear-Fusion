@@ -1,0 +1,79 @@
+&kt_grids_knobs
+    grid_option = 'single'
+/
+
+&kt_grids_single_parameters
+/
+
+&theta_grid_parameters
+    ntheta = 32
+    nperiod = 2 
+/
+
+&theta_grid_knobs
+    equilibrium_option = 'eik'
+/
+
+&theta_grid_eik_knobs
+    bishop = 4
+    irho = 2
+    iflux = 0
+/
+
+&le_grids_knobs
+    npassing = 7
+    negrid = 10
+/
+
+&dist_fn_knobs
+    adiabatic_option = 'iphi00=2'
+    opt_source = .false.
+/
+
+&fields_knobs
+    field_option = 'implicit'
+/
+
+&knobs
+    fphi = 1.0
+    fapar = 1.0
+    fbpar = 1.0
+    delt = 0.1
+    nstep = 10000
+    avail_cpu_time = 7200
+    seed = 100
+/
+
+&layouts_knobs
+    layout = 'xyles'
+/
+
+&collisions_knobs
+    collision_model = 'default'
+/
+
+&species_knobs
+    nspec = 2
+/
+
+&init_g_knobs
+    ginit_option = 'random_sine'
+    chop_side = .false.
+    phiinit = 1e-05
+/
+
+&gs2_diagnostics_knobs
+    write_ascii = .false.
+    write_omega = .true.
+    write_final_fields = .true.
+    nwrite = 100
+    navg = 100
+    omegatol = 1e-6
+    omegatinst = 500.0
+    nsave = 50000
+    save_for_restart = .false.
+    write_fluxes = .true.
+/
+
+&parameters
+/
