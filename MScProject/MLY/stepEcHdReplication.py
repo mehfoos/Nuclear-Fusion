@@ -9,6 +9,7 @@ from pyrokinetics import Pyro, template_dir, normalisation
 import matplotlib.pyplot as plt
 import math
 import pandas as pd
+import matplotlib.scale as mscale
 ###
     
 ### IMPORT AND EXTRACT DATA
@@ -53,7 +54,8 @@ else:
 ###
 
 ### STEP paper data
-DataFig2A = pd.read_csv('MScProject/MLY/Step1Fig2a_psi0.49_growth.csv',skipinitialspace=True)
+DataFig2AIncStable = pd.read_csv('MScProject/MLY/Step1Fig2a_psi0.49_growth.csv',skipinitialspace=True)
+DataFig2A = pd.read_csv('MScProject/MLY/Step1Fig2a_psi0.49_growth unstable.csv',skipinitialspace=True)
 DataFig2B = pd.read_csv('MScProject/MLY/Step1Fig2b_psi0.49_modefreq.csv',skipinitialspace=True)
 ###
 
@@ -61,27 +63,61 @@ DataFig2B = pd.read_csv('MScProject/MLY/Step1Fig2b_psi0.49_modefreq.csv',skipini
 
 ## Plot all
 
-fig, ax = plt.subplots()
-growth_rate.isel(kx=0).plot.line(x='time') 
+#fig, ax = plt.subplots()
+#growth_rate.isel(kx=0).plot.line(x='time') 
 
-fig, ax = plt.subplots()
-mode_freq.isel(kx=0).plot.line(x='time') 
+#fig, ax = plt.subplots()
+#mode_freq.isel(kx=0).plot.line(x='time') 
 ##
 
 ## Plot the last time series, without scaling
 
-fig, ax = plt.subplots()
+#fig, ax = plt.subplots()
 # Extract growth rate where kx=0 and time is the max of each series and plot against ky.
-(1*growth_rate_final).plot.line(x='ky',marker="o",label="GS2 Replication", ax=ax)
-DataFig2A.plot(x="x",y="y",label="psi=0.49 (STEP paper)", color="orange",marker="s", markerfacecolor='none', linestyle='None', ax=ax)
-plt.suptitle('Growth rate where kx=0 and time is the max of each series')
+#(1*growth_rate_final).plot.line(x='ky', color="black",marker="o",label="GS2 Replication", ax=ax)
+#DataFig2A.plot(x="x",y="y",label="psi=0.49 (STEP paper)", color="orange",marker="s", markerfacecolor='none', linestyle='None', ax=ax)
+#plt.suptitle('Growth rate where kx=0 and time is the max of each series')
 
-fig, ax = plt.subplots()
+#fig, ax = plt.subplots()
 # Extract growth rate where kx=0 and time is the max of each series and plot against ky.
-(1*mode_freq_final).plot.line(x='ky', ax=ax)
-DataFig2B.plot(x="x",y="y",label="psi=0.49 (STEP paper)", color="orange",marker="s", markerfacecolor='none', linestyle='None', ax=ax)
-plt.suptitle('Mode Frequencies where kx=0 and time is the max of each series')
+#(1*mode_freq_final).plot.line(x='ky', ax=ax)
+#DataFig2B.plot(x="x",y="y",label="psi=0.49 (STEP paper)", color="orange",marker="s", markerfacecolor='none', linestyle='None', ax=ax)
+#plt.suptitle('Mode Frequencies where kx=0 and time is the max of each series')
 ##
+
+## Plot GX paper figure 2.a.top
+fig, axs = plt.subplots(2,1,layout="constrained")
+DataFig2AIncStable.plot(x="x",y="y",label="Baseline; stable modes", color="orange",marker="s", markerfacecolor='none', linestyle='None', ax=axs[0])
+DataFig2A.plot(x="x",y="y",label="Baseline; unstable modes", color="orange",marker="s", markerfacecolor='orange', linestyle='None', ax=axs[0])
+(1*growth_rate_final).plot.line(x='ky', color="black",marker="x",label="Replication", ax=axs[0])
+plt.suptitle('Replication attempt: STEP-EC-HD Ψ=0.49')
+axs[0].set_title('')
+axs[0].set_xlabel('')
+axs[0].set_ylabel('Normalised growth rate\n $\\gamma a/c_{s}$')
+axs[0].legend()
+axs[0].set_xscale('log')
+axs[0].grid(linestyle=':')
+#plt.ylim((0.0,0.28))
+#axs[0].set_yticks((0.00,0.1,0.2))
+#axs[0].minorticks_on()
+
+## Plot GX paper figure 2.a.bottom
+DataFig2B.plot(x="x",y="y",label="Baseline; unstable modes", color="orange",marker="s", markerfacecolor='orange', linestyle='None', ax=axs[1])
+(1*mode_freq_final).plot.line(x='ky',color="black",marker="x",label="Replication", ax=axs[1])
+axs[1].sharex(axs[0])
+axs[1].set_xscale('log')
+axs[1].legend()
+plt.xlabel('Normalised binormal wavenumber $k_y\\rho_i$')
+axs[1].set_ylabel('Real (Mode) Frequencies\n $\\omega a/c_{s}$')
+plt.title('Real (Mode) Frequencies')
+axs[1].set_title('')
+#plt.xlim((0.0,1.7))
+#plt.ylim((-1,1))
+#plt.xticks((0.00,0.25,0.50,0.75,1.00,1.25,1.50))
+#plt.yticks((-1,-0.5,0,0.5,1))
+#plt.minorticks_on()
+fig.align_ylabels()
+axs[1].grid(linestyle=':')
 
 plt.show()
 ###

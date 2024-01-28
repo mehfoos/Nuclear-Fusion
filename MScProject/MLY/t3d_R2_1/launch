@@ -4,7 +4,7 @@
 #SBATCH --mail-type=END,FAIL             # Mail events (NONE, BEGIN, END, FAIL, ALL)
 #SBATCH --mail-user=mly509@york.ac.uk      # Where to send mail
 #SBATCH --account=pet-gspt-2019
-#SBATCH --time=96:00:00
+#SBATCH --time=48:00:00
 #SBATCH --ntasks=960
 #SBATCH --cpus-per-task=1
 #SBATCH --partition=nodes

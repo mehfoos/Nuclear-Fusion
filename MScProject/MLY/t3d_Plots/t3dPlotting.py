@@ -10,6 +10,14 @@ import numpy as np
     
 ### IMPORT AND EXTRACT DATA
 
+def merge_defaultdicts(d,d1): # From SO
+    for k,v in d1.items():
+        if (k in d):
+            d[k].update(d1[k])
+        else:
+            d[k] = d1[k]
+    return d
+
 # Define full path
 fullPath = "/home/mly509/GithubCloneMly/Nuclear-Fusion/MScProject/MLY/t3d_Plots/"
         
@@ -19,13 +27,14 @@ t3dPlot = plotter()
 t3dPlot.grid_lines = True
 
 #t3dOutputFile1 = "input_step1.log.npy"
-t3dOutputFiles = sorted([f for f in os.listdir(fullPath) if f.endswith('.npy')])
+t3dOutputFiles = sorted([f for f in os.listdir(fullPath) if f.endswith('.npy')]) # From SO
 print(t3dOutputFiles)
 
-fullData = []
+fullData = np.load(fullPath+t3dOutputFiles[0], allow_pickle=True).tolist()
 for iFile in t3dOutputFiles:
-    data = np.load(fullPath+iFile, allow_pickle=True)
-    fullData.append(data)
+    data = np.load(fullPath+iFile, allow_pickle=True).tolist()
+    fullData = merge_defaultdicts(fullData,data)
+    #fullData = np.concatenate([fullData,data])
 
 print('debug')
 
@@ -33,10 +42,3 @@ print('debug')
 
 #t3dPlot.plot_panel()
 
-def merge_defaultdicts(d,d1):
-    for k,v in d1.items():
-        if (k in d):
-            d[k].update(d1[k])
-        else:
-            d[k] = d1[k]
-    return d

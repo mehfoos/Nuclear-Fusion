@@ -67,11 +67,11 @@ def main():
 
     ## Plot all
 
-    fig, ax = plt.subplots()
-    growth_rate.isel(kx=0).plot.line(x='time') 
+    #fig, ax = plt.subplots()
+    #growth_rate.isel(kx=0).plot.line(x='time') 
 
-    fig, ax = plt.subplots()
-    mode_freq.isel(kx=0).plot.line(x='time') 
+    #fig, ax = plt.subplots()
+    #mode_freq.isel(kx=0).plot.line(x='time') 
 
     ## Plot the last time series, without scaling
     # fig, ax = plt.subplots()
@@ -89,27 +89,35 @@ def main():
     (growth_rate_finalGX).plot.line(x='ky',color="black",marker="o",label="GS2 Replication", ax=axs[0])
     GxFig2ATopGs2.plot(x="x",y="y",label="GS2 (GX paper)", color="orange",marker="s", markerfacecolor='none', linestyle='None', ax=axs[0])
     GxFig2ATopGx.plot(x="x",y="y",label="GX (GX paper)", color="blue",marker="x", markerfacecolor='none', linestyle='None', ax=axs[0])
-    plt.suptitle('Replication attempt: GX Figure2 a)')
+    plt.suptitle('Replication attempt: GX Cyclone Base Case (ion scale; kinetic electron response)')
     axs[0].set_title('Normalised Growth Rates Frequencies')
-    axs[0].set_xlabel('Normalised binormal wavenumber $k_y$')
+    axs[0].set_title('')
+    axs[0].set_xlabel('')
+    axs[0].set_ylabel('Normalised growth rate\n $\\gamma a/v_{ti}$')
     axs[0].legend()
     plt.ylim((0.0,0.28))
     axs[0].set_yticks((0.00,0.1,0.2))
     axs[0].minorticks_on()
+    axs[0].grid(linestyle=':')
 
     ## Plot GX paper figure 2.a.bottom
     (mode_freq_finalGX).plot.line(x='ky',color="black",marker="o",label="GS2 Replication", ax=axs[1])
     GxFig2ABottomGs2.plot(x="x",y="y",label="GS2 (GX paper)", color="orange",marker="s", markerfacecolor='none', linestyle='None', ax=axs[1])
     GxFig2ABottomGx.plot(x="x",y="y",label="GX (GX paper)", color="blue",marker="x", markerfacecolor='none', linestyle='None', ax=axs[1])
     axs[1].sharex(axs[0])
-    axs[0].legend()
-    plt.xlabel('Normalised binormal wavenumber $k_y$')
+    axs[1].legend()
+    plt.xlabel('Normalised binormal wavenumber $k_y\\rho_i$')
+    axs[1].set_ylabel('Real (Mode) Frequencies\n $\\omega a/v_{ti}$')
     plt.title('Real (Mode) Frequencies')
+    axs[1].set_title('')
     plt.xlim((0.0,1.7))
     plt.ylim((-1,1))
     plt.xticks((0.00,0.25,0.50,0.75,1.00,1.25,1.50))
     plt.yticks((-1,-0.5,0,0.5,1))
     plt.minorticks_on()
+    axs[1].grid(linestyle=':')
+
+    fig.align_ylabels()
 
     plt.show()
 
