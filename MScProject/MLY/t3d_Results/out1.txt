@@ -1,0 +1,73 @@
+Running T3D calculation.
+
+  Loading input file: input_step.in 
+
+
+  Grid Information
+    Radial coordinate is rho = r/a (normalized minor radius)
+    N_radial: 6
+    rho grid:             [0.082 0.245 0.409 0.573 0.736 0.9  ]
+    flux (midpoint) grid:   [0.164 0.327 0.491 0.655 0.818]
+  Looking for GS2 files
+    Expecting GS2 template: gs2_input.in
+    Expecting GS2 executable: /users/mly509/gs2/bin/gs2
+    GS2-Trinity output path: outputs
+
+  Global Geometry Information
+    R_major: 4.35 m
+    a_minor: 2.00 m
+    B_0: 2.508305565507751 T
+
+This calculation contains ['electron', 'deuterium'] species.
+The 'deuterium' species is treated as the bulk ions.
+Evolving densities: ['deuterium']
+The 'electron' density will be set by quasineutrality.
+Evolving temperatures: ['electron', 'deuterium']
+Using 'deuterium' as the reference species for turbulence calculations.
+Total number of (parallelizable) flux tube calculations per step = 20.
+
+  Initializing normalizations
+    n_ref = 1e+20 m^-3
+    T_ref = 1000.0 eV
+    B_ref = 1 T
+    m_ref = 2.0 m_p
+
+    a_ref = 2.00 m
+    t_ref = 0.621 s
+    P_ref = 0.026 MW/m^3
+    S_ref = 1.612 10^20/(m^3 s)
+    rho_star_ref = 3.228e-03
+
+time = 0.000e+00*t_ref, time index = 0, iteration index = 0, dtau = 0.0001, rms = 1.725e-04
+*** Increasing timestep at time index 1 (1.725e-04 < 5.000e-03). new dtau = 0.0002 ***
+time = 1.000e-04*t_ref, time index = 1, iteration index = 0, dtau = 0.0002, rms = 3.497e-04
+*** Increasing timestep at time index 2 (3.497e-04 < 5.000e-03). new dtau = 0.0004 ***
+time = 3.000e-04*t_ref, time index = 2, iteration index = 0, dtau = 0.0004, rms = 7.156e-04
+*** Increasing timestep at time index 3 (7.156e-04 < 5.000e-03). new dtau = 0.0008 ***
+time = 7.000e-04*t_ref, time index = 3, iteration index = 0, dtau = 0.0008, rms = 1.596e-03
+*** Increasing timestep at time index 4 (1.596e-03 < 5.000e-03). new dtau = 0.001 ***
+time = 1.500e-03*t_ref, time index = 4, iteration index = 0, dtau = 0.001, rms = 2.608e-03
+*** Increasing timestep at time index 5 (2.608e-03 < 5.000e-03). new dtau = 0.001 ***
+time = 2.500e-03*t_ref, time index = 5, iteration index = 0, dtau = 0.001, rms = 3.127e-03
+*** Increasing timestep at time index 6 (3.127e-03 < 5.000e-03). new dtau = 0.001 ***
+time = 3.500e-03*t_ref, time index = 6, iteration index = 0, dtau = 0.001, rms = 5.643e-02
+time = 3.500e-03*t_ref, time index = 6, iteration index = 1, dtau = 0.001, rms = 6.556e-02
+time = 3.500e-03*t_ref, time index = 6, iteration index = 2, dtau = 0.001, rms = 1.192e-02
+time = 4.500e-03*t_ref, time index = 7, iteration index = 0, dtau = 0.001, rms = 2.084e-03
+*** Increasing timestep at time index 8 (2.084e-03 < 5.000e-03). new dtau = 0.001 ***
+time = 5.500e-03*t_ref, time index = 8, iteration index = 0, dtau = 0.001, rms = 1.416e-03
+*** Increasing timestep at time index 9 (1.416e-03 < 5.000e-03). new dtau = 0.001 ***
+time = 6.500e-03*t_ref, time index = 9, iteration index = 0, dtau = 0.001, rms = 1.371e-03
+*** Increasing timestep at time index 10 (1.371e-03 < 5.000e-03). new dtau = 0.001 ***
+time = 7.500e-03*t_ref, time index = 10, iteration index = 0, dtau = 0.001, rms = 1.241e-03
+*** Increasing timestep at time index 11 (1.241e-03 < 5.000e-03). new dtau = 0.001 ***
+time = 8.500e-03*t_ref, time index = 11, iteration index = 0, dtau = 0.001, rms = 1.213e-03
+*** Increasing timestep at time index 12 (1.213e-03 < 5.000e-03). new dtau = 0.001 ***
+time = 9.500e-03*t_ref, time index = 12, iteration index = 0, dtau = 0.001, rms = 1.214e-03
+*** Increasing timestep at time index 13 (1.214e-03 < 5.000e-03). new dtau = 0.001 ***
+time = 1.050e-02*t_ref, time index = 13, iteration index = 0, dtau = 0.001, rms = 1.225e-03
+*** Increasing timestep at time index 14 (1.225e-03 < 5.000e-03). new dtau = 0.001 ***
+time = 1.150e-02*t_ref, time index = 14, iteration index = 0, dtau = 0.001, rms = 1.245e-03
+*** Increasing timestep at time index 15 (1.245e-03 < 5.000e-03). new dtau = 0.001 ***
+time = 1.250e-02*t_ref, time index = 15, iteration index = 0, dtau = 0.001, rms = 1.263e-03
+*** Increasing timestep at time index 16 (1.263e-03 < 5.000e-03). new dtau = 0.001 ***

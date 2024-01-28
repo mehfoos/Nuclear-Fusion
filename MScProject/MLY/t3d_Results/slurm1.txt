@@ -1,0 +1,693 @@
+/var/spool/slurmd.spool/job2418350/slurm_script: line 14: source: /users//mly509/t3d: is a directory
+/users/mly509/t3d/testing/lib/python3.10/site-packages/t3d/Import.py:80: IntegrationWarning: The occurrence of roundoff error is detected, which prevents 
+  the requested tolerance from being achieved.  The error may be 
+  underestimated.
+  Sn_trin[i] = integrate.quad(f, self.grid.rho_axis[i]-self.grid.drho/2, self.grid.rho_axis[i]+self.grid.drho/2)[0]/self.grid.drho
+/users/mly509/t3d/testing/lib/python3.10/site-packages/t3d/Import.py:80: IntegrationWarning: The maximum number of subdivisions (50) has been achieved.
+  If increasing the limit yields no improvement it is advised to analyze 
+  the integrand in order to determine the difficulties.  If the position of a 
+  local difficulty can be determined (singularity, discontinuity) one will 
+  probably gain from splitting up the interval and calling the integrator 
+  on the subranges.  Perhaps a special-purpose integrator should be used.
+  Sn_trin[i] = integrate.quad(f, self.grid.rho_axis[i]-self.grid.drho/2, self.grid.rho_axis[i]+self.grid.drho/2)[0]/self.grid.drho
+/users/mly509/t3d/testing/lib/python3.10/site-packages/t3d/Import.py:95: IntegrationWarning: The maximum number of subdivisions (50) has been achieved.
+  If increasing the limit yields no improvement it is advised to analyze 
+  the integrand in order to determine the difficulties.  If the position of a 
+  local difficulty can be determined (singularity, discontinuity) one will 
+  probably gain from splitting up the interval and calling the integrator 
+  on the subranges.  Perhaps a special-purpose integrator should be used.
+  Sp_trin[i] = integrate.quad(f, self.grid.rho_axis[i]-self.grid.drho/2, self.grid.rho_axis[i]+self.grid.drho/2)[0]/self.grid.drho
+/users/mly509/t3d/testing/lib/python3.10/site-packages/t3d/Import.py:95: IntegrationWarning: The occurrence of roundoff error is detected, which prevents 
+  the requested tolerance from being achieved.  The error may be 
+  underestimated.
+  Sp_trin[i] = integrate.quad(f, self.grid.rho_axis[i]-self.grid.drho/2, self.grid.rho_axis[i]+self.grid.drho/2)[0]/self.grid.drho
+Running T3D calculation.
+
+  Loading input file: input_step.in 
+
+
+  Grid Information
+    Radial coordinate is rho = r/a (normalized minor radius)
+    N_radial: 6
+    rho grid:             [0.082 0.245 0.409 0.573 0.736 0.9  ]
+    flux (midpoint) grid:   [0.164 0.327 0.491 0.655 0.818]
+  Looking for GS2 files
+    Expecting GS2 template: gs2_input.in
+    Expecting GS2 executable: /users/mly509/gs2/bin/gs2
+    GS2-Trinity output path: outputs
+
+  Global Geometry Information
+    R_major: 4.35 m
+    a_minor: 2.00 m
+    B_0: 2.508305565507751 T
+
+This calculation contains ['electron', 'deuterium'] species.
+The 'deuterium' species is treated as the bulk ions.
+Evolving densities: ['deuterium']
+The 'electron' density will be set by quasineutrality.
+Evolving temperatures: ['electron', 'deuterium']
+Using 'deuterium' as the reference species for turbulence calculations.
+Total number of (parallelizable) flux tube calculations per step = 20.
+
+  Initializing normalizations
+    n_ref = 1e+20 m^-3
+    T_ref = 1000.0 eV
+    B_ref = 1 T
+    m_ref = 2.0 m_p
+
+    a_ref = 2.00 m
+    t_ref = 0.621 s
+    P_ref = 0.026 MW/m^3
+    S_ref = 1.612 10^20/(m^3 s)
+    rho_star_ref = 3.228e-03
+
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.1
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.2
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.3
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.4
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.7
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.8
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.9
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.11
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.13
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.14
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.15
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.19
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.20
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.21
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.23
+time = 0.000e+00*t_ref, time index = 0, iteration index = 0, dtau = 0.0001, rms = 1.725e-04
+*** Increasing timestep at time index 1 (1.725e-04 < 5.000e-03). new dtau = 0.0002 ***
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.25
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.26
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.27
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.31
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.32
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.33
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.35
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.37
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.38
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.39
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.43
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.44
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.45
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.47
+time = 1.000e-04*t_ref, time index = 1, iteration index = 0, dtau = 0.0002, rms = 3.497e-04
+*** Increasing timestep at time index 2 (3.497e-04 < 5.000e-03). new dtau = 0.0004 ***
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.49
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.50
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.51
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.52
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.53
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.55
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.56
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.57
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.59
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.61
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.62
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.63
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.67
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.68
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.69
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.71
+time = 3.000e-04*t_ref, time index = 2, iteration index = 0, dtau = 0.0004, rms = 7.156e-04
+*** Increasing timestep at time index 3 (7.156e-04 < 5.000e-03). new dtau = 0.0008 ***
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.73
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.74
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.75
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.76
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.77
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.79
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.80
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.81
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.83
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.85
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.86
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.87
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.91
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.92
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.93
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.95
+time = 7.000e-04*t_ref, time index = 3, iteration index = 0, dtau = 0.0008, rms = 1.596e-03
+*** Increasing timestep at time index 4 (1.596e-03 < 5.000e-03). new dtau = 0.001 ***
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.97
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.98
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.99
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.100
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.103
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.104
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.105
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.107
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.109
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.110
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.111
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.115
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.116
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.117
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.119
+time = 1.500e-03*t_ref, time index = 4, iteration index = 0, dtau = 0.001, rms = 2.608e-03
+*** Increasing timestep at time index 5 (2.608e-03 < 5.000e-03). new dtau = 0.001 ***
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.121
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.122
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.123
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.124
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.127
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.128
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.129
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.131
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.133
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.134
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.135
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.139
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.140
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.141
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.143
+time = 2.500e-03*t_ref, time index = 5, iteration index = 0, dtau = 0.001, rms = 3.127e-03
+*** Increasing timestep at time index 6 (3.127e-03 < 5.000e-03). new dtau = 0.001 ***
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.145
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.146
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.147
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.148
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.151
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.152
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.153
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.155
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.157
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.158
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.159
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.163
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.164
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.165
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.167
+time = 3.500e-03*t_ref, time index = 6, iteration index = 0, dtau = 0.001, rms = 5.643e-02
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.169
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.170
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.171
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.175
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.176
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.177
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.179
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.181
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.182
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.183
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.185
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.187
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.188
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.189
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.191
+time = 3.500e-03*t_ref, time index = 6, iteration index = 1, dtau = 0.001, rms = 6.556e-02
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.193
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.194
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.195
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.197
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.199
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.200
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.201
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.203
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.205
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.206
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.207
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.211
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.212
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.213
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.215
+time = 3.500e-03*t_ref, time index = 6, iteration index = 2, dtau = 0.001, rms = 1.192e-02
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.217
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.218
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.219
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.223
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.224
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.225
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.227
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.229
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.230
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.231
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.235
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.236
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.237
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.239
+time = 4.500e-03*t_ref, time index = 7, iteration index = 0, dtau = 0.001, rms = 2.084e-03
+*** Increasing timestep at time index 8 (2.084e-03 < 5.000e-03). new dtau = 0.001 ***
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.241
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.242
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.243
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.247
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.248
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.249
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.251
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.253
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.254
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.255
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.259
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.260
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.261
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.263
+time = 5.500e-03*t_ref, time index = 8, iteration index = 0, dtau = 0.001, rms = 1.416e-03
+*** Increasing timestep at time index 9 (1.416e-03 < 5.000e-03). new dtau = 0.001 ***
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.265
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.266
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.267
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.271
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.272
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.273
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.275
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.277
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.278
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.279
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.283
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.284
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.285
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.287
+time = 6.500e-03*t_ref, time index = 9, iteration index = 0, dtau = 0.001, rms = 1.371e-03
+*** Increasing timestep at time index 10 (1.371e-03 < 5.000e-03). new dtau = 0.001 ***
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.289
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.290
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.291
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.295
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.296
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.297
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.299
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.301
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.302
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.303
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.304
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.306
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.307
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.308
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.309
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.311
+time = 7.500e-03*t_ref, time index = 10, iteration index = 0, dtau = 0.001, rms = 1.241e-03
+*** Increasing timestep at time index 11 (1.241e-03 < 5.000e-03). new dtau = 0.001 ***
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.313
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.314
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.315
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.317
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.319
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.320
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.321
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.323
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.325
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.326
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.327
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.328
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.331
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.332
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.333
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.335
+time = 8.500e-03*t_ref, time index = 11, iteration index = 0, dtau = 0.001, rms = 1.213e-03
+*** Increasing timestep at time index 12 (1.213e-03 < 5.000e-03). new dtau = 0.001 ***
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.337
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.338
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.339
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.341
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.343
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.344
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.345
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.346
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.347
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.349
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.350
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.351
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.352
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.355
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.356
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.357
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.358
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.359
+time = 9.500e-03*t_ref, time index = 12, iteration index = 0, dtau = 0.001, rms = 1.214e-03
+*** Increasing timestep at time index 13 (1.214e-03 < 5.000e-03). new dtau = 0.001 ***
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.361
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.362
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.363
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.365
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.366
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.367
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.368
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.369
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.371
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.373
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.374
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.375
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.379
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.380
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.381
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.383
+time = 1.050e-02*t_ref, time index = 13, iteration index = 0, dtau = 0.001, rms = 1.225e-03
+*** Increasing timestep at time index 14 (1.225e-03 < 5.000e-03). new dtau = 0.001 ***
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.385
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.386
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.387
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.388
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.389
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.391
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.392
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.393
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.395
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.397
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.398
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.399
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.403
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.404
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.405
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.406
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.407
+time = 1.150e-02*t_ref, time index = 14, iteration index = 0, dtau = 0.001, rms = 1.245e-03
+*** Increasing timestep at time index 15 (1.245e-03 < 5.000e-03). new dtau = 0.001 ***
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.409
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.410
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.411
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.412
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.413
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.415
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.416
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.417
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.419
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.421
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.422
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.423
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.427
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.428
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.429
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.430
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.431
+time = 1.250e-02*t_ref, time index = 15, iteration index = 0, dtau = 0.001, rms = 1.263e-03
+*** Increasing timestep at time index 16 (1.263e-03 < 5.000e-03). new dtau = 0.001 ***
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.433
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.434
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.435
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.436
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.437
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.439
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.440
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.441
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.443
+srun: Job 2418350 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2418350.445
+slurmstepd: error: *** JOB 2418350 ON node033 CANCELLED AT 2024-01-16T12:51:52 DUE TO TIME LIMIT ***
+
+============================
+ Job utilisation efficiency
+============================
+
+Job ID: 2418350
+Cluster: viking2.yor.alces.network
+User/Group: mly509/clusterusers
+State: TIMEOUT (exit code 0)
+Nodes: 33
+Cores per node: 29
+CPU Utilized: 280-03:50:04
+CPU Efficiency: 29.18% of 960-04:16:00 core-walltime
+Job Wall-clock time: 1-00:00:16
+Memory Utilized: 250.68 MB
+Memory Efficiency: 0.00% of 4.91 TB
+ Requested wall clock time: 1-00:00:00
+    Actual wall clock time: 1-00:00:16
+Wall clock time efficiency: 100.0%
+           Job queued time: 00:00:01
