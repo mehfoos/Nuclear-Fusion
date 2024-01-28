@@ -1,0 +1,128 @@
+/var/spool/slurmd.spool/job2752992/slurm_script: line 14: source: /users//mly509/t3d: is a directory
+Running T3D calculation.
+
+  Loading input file: input_step.in 
+
+
+  Grid Information
+    Radial coordinate is rho = r/a (normalized minor radius)
+    N_radial: 6
+    rho grid:             [0.082 0.245 0.409 0.573 0.736 0.9  ]
+    flux (midpoint) grid:   [0.164 0.327 0.491 0.655 0.818]
+  Looking for GS2 files
+    Expecting GS2 template: gs2_input.in
+    Expecting GS2 executable: /users/mly509/gs2/bin/gs2
+    GS2-Trinity output path: outputs
+      creating new output dir outputs
+
+  Global Geometry Information
+    R_major: 4.35 m
+    a_minor: 2.00 m
+    B_0: 2.508305565507751 T
+
+This calculation contains ['electron', 'deuterium'] species.
+The 'deuterium' species is treated as the bulk ions.
+Evolving densities: ['deuterium']
+The 'electron' density will be set by quasineutrality.
+Evolving temperatures: ['electron', 'deuterium']
+Using 'deuterium' as the reference species for turbulence calculations.
+Total number of (parallelizable) flux tube calculations per step = 20.
+
+  Initializing normalizations
+    n_ref = 1e+20 m^-3
+    T_ref = 1000.0 eV
+    B_ref = 1 T
+    m_ref = 2.0 m_p
+
+    a_ref = 2.00 m
+    t_ref = 0.621 s
+    P_ref = 0.026 MW/m^3
+    S_ref = 1.612 10^20/(m^3 s)
+    rho_star_ref = 3.228e-03
+
+[array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01])]
+[array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01]), array([2.578e-05, 5.584e-04, 6.328e-03, 3.781e-02, 1.166e-01, 1.465e-01])]
+time = 0.000e+00*t_ref, time index = 0, iteration index = 0, dtau = 0.0001, rms = 1.465e-05
+*** Increasing timestep at time index 1 (1.465e-05 < 5.000e-03). new dtau = 0.0002 ***
+time = 1.000e-04*t_ref, time index = 1, iteration index = 0, dtau = 0.0002, rms = 2.906e-05
+*** Increasing timestep at time index 2 (2.906e-05 < 5.000e-03). new dtau = 0.0004 ***
+time = 3.000e-04*t_ref, time index = 2, iteration index = 0, dtau = 0.0004, rms = 5.695e-05
+*** Increasing timestep at time index 3 (5.695e-05 < 5.000e-03). new dtau = 0.0008 ***
+time = 7.000e-04*t_ref, time index = 3, iteration index = 0, dtau = 0.0008, rms = 1.221e-04
+*** Increasing timestep at time index 4 (1.221e-04 < 5.000e-03). new dtau = 0.0016 ***
+time = 1.500e-03*t_ref, time index = 4, iteration index = 0, dtau = 0.0016, rms = 2.362e-04
+*** Increasing timestep at time index 5 (2.362e-04 < 5.000e-03). new dtau = 0.0032 ***
+time = 3.100e-03*t_ref, time index = 5, iteration index = 0, dtau = 0.0032, rms = 4.160e-04
+*** Increasing timestep at time index 6 (4.160e-04 < 5.000e-03). new dtau = 0.0064 ***
+time = 6.300e-03*t_ref, time index = 6, iteration index = 0, dtau = 0.0064, rms = 3.898e-04
+*** Increasing timestep at time index 7 (3.898e-04 < 5.000e-03). new dtau = 0.008 ***
+time = 1.270e-02*t_ref, time index = 7, iteration index = 0, dtau = 0.008, rms = 6.501e-04
+*** Increasing timestep at time index 8 (6.501e-04 < 5.000e-03). new dtau = 0.008 ***
+time = 2.070e-02*t_ref, time index = 8, iteration index = 0, dtau = 0.008, rms = 5.472e-04
+*** Increasing timestep at time index 9 (5.472e-04 < 5.000e-03). new dtau = 0.008 ***
+time = 2.870e-02*t_ref, time index = 9, iteration index = 0, dtau = 0.008, rms = 7.111e-04
+*** Increasing timestep at time index 10 (7.111e-04 < 5.000e-03). new dtau = 0.008 ***
+time = 3.670e-02*t_ref, time index = 10, iteration index = 0, dtau = 0.008, rms = 4.776e-04
+*** Increasing timestep at time index 11 (4.776e-04 < 5.000e-03). new dtau = 0.008 ***
+time = 4.470e-02*t_ref, time index = 11, iteration index = 0, dtau = 0.008, rms = 7.410e-04
+*** Increasing timestep at time index 12 (7.410e-04 < 5.000e-03). new dtau = 0.008 ***
+time = 5.270e-02*t_ref, time index = 12, iteration index = 0, dtau = 0.008, rms = 4.983e-04
+*** Increasing timestep at time index 13 (4.983e-04 < 5.000e-03). new dtau = 0.008 ***
+time = 6.070e-02*t_ref, time index = 13, iteration index = 0, dtau = 0.008, rms = 7.084e-04
+*** Increasing timestep at time index 14 (7.084e-04 < 5.000e-03). new dtau = 0.008 ***
+time = 6.870e-02*t_ref, time index = 14, iteration index = 0, dtau = 0.008, rms = 4.902e-04
+*** Increasing timestep at time index 15 (4.902e-04 < 5.000e-03). new dtau = 0.008 ***
+time = 7.670e-02*t_ref, time index = 15, iteration index = 0, dtau = 0.008, rms = 7.570e-04
+*** Increasing timestep at time index 16 (7.570e-04 < 5.000e-03). new dtau = 0.008 ***
+time = 8.470e-02*t_ref, time index = 16, iteration index = 0, dtau = 0.008, rms = 4.892e-04
+*** Increasing timestep at time index 17 (4.892e-04 < 5.000e-03). new dtau = 0.008 ***
+time = 9.270e-02*t_ref, time index = 17, iteration index = 0, dtau = 0.008, rms = 6.977e-04
+*** Increasing timestep at time index 18 (6.977e-04 < 5.000e-03). new dtau = 0.008 ***
+time = 1.007e-01*t_ref, time index = 18, iteration index = 0, dtau = 0.008, rms = 6.097e-04
+*** Increasing timestep at time index 19 (6.097e-04 < 5.000e-03). new dtau = 0.008 ***
+time = 1.087e-01*t_ref, time index = 19, iteration index = 0, dtau = 0.008, rms = 9.068e-04
+*** Increasing timestep at time index 20 (9.068e-04 < 5.000e-03). new dtau = 0.008 ***
+time = 1.167e-01*t_ref, time index = 20, iteration index = 0, dtau = 0.008, rms = 4.863e-04
+*** Increasing timestep at time index 21 (4.863e-04 < 5.000e-03). new dtau = 0.008 ***
+time = 1.247e-01*t_ref, time index = 21, iteration index = 0, dtau = 0.008, rms = 7.170e-04
+*** Increasing timestep at time index 22 (7.170e-04 < 5.000e-03). new dtau = 0.008 ***
+srun: Job 2752992 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=2752992.543
+time = 1.327e-01*t_ref, time index = 22, iteration index = 0, dtau = 0.008, rms = 5.266e-04
+*** Increasing timestep at time index 23 (5.266e-04 < 5.000e-03). new dtau = 0.008 ***
+time = 1.407e-01*t_ref, time index = 23, iteration index = 0, dtau = 0.008, rms = 9.594e-04
+*** Increasing timestep at time index 24 (9.594e-04 < 5.000e-03). new dtau = 0.008 ***
+time = 1.487e-01*t_ref, time index = 24, iteration index = 0, dtau = 0.008, rms = 5.128e-04
+*** Increasing timestep at time index 25 (5.128e-04 < 5.000e-03). new dtau = 0.008 ***
+time = 1.567e-01*t_ref, time index = 25, iteration index = 0, dtau = 0.008, rms = 7.074e-04
+*** Increasing timestep at time index 26 (7.074e-04 < 5.000e-03). new dtau = 0.008 ***
+time = 1.647e-01*t_ref, time index = 26, iteration index = 0, dtau = 0.008, rms = 5.631e-04
+*** Increasing timestep at time index 27 (5.631e-04 < 5.000e-03). new dtau = 0.008 ***
+time = 1.727e-01*t_ref, time index = 27, iteration index = 0, dtau = 0.008, rms = 8.387e-04
+*** Increasing timestep at time index 28 (8.387e-04 < 5.000e-03). new dtau = 0.008 ***
+time = 1.807e-01*t_ref, time index = 28, iteration index = 0, dtau = 0.008, rms = 5.405e-04
+*** Increasing timestep at time index 29 (5.405e-04 < 5.000e-03). new dtau = 0.008 ***
+time = 1.887e-01*t_ref, time index = 29, iteration index = 0, dtau = 0.008, rms = 7.359e-04
+Time evolution finished! time = 1.967e-01*t_ref, time index = 30
+
+T3D Complete, exiting normally.
+
+============================
+ Job utilisation efficiency
+============================
+
+Job ID: 2752992
+Cluster: viking2.yor.alces.network
+User/Group: mly509/clusterusers
+State: COMPLETED (exit code 0)
+Nodes: 17
+Cores per node: 56
+CPU Utilized: 416-13:46:34
+CPU Efficiency: 75.15% of 554-07:44:00 core-walltime
+Job Wall-clock time: 13:51:29
+Memory Utilized: 317.50 MB
+Memory Efficiency: 0.01% of 4.91 TB
+ Requested wall clock time: 2-00:00:00
+    Actual wall clock time: 13:51:29
+Wall clock time efficiency: 28.9%
+           Job queued time: 00:00:20
