@@ -33,8 +33,8 @@ class plotter:
             "heat_flux": self.plot_heat_flux,
             "particle_balance": self.plot_particle_balance,
             "particle_flux": self.plot_particle_flux,
-            "fusion_power_density": self.plot_fusion_power_density,
-            "radiation": self.plot_radiation_profiles,
+            #"fusion_power_density": self.plot_fusion_power_density,
+            #"radiation": self.plot_radiation_profiles,
             "collisional_equilibration": self.plot_collisional_equilibration,
             "power_source": self.plot_auxiliary_power_source,
             "q": self.plot_q,
@@ -84,6 +84,7 @@ class plotter:
         # purple_map = pylab.cm.Purples(np.linspace(0.25, 1, self.N))
 
         # MLY adding older version stuff Placing here so that it's overriden if there are changes
+        self.beta = np.asarray(data['beta_ref'])
         self.Qi_turb = np.asarray(data['qflux_turb_' + self.ion_tag])
         self.Qe_turb = np.asarray(data['qflux_turb_e'])
         self.Q_turb_MW_i = np.asarray(data['Q_turb_MW_' + self.ion_tag])
@@ -98,6 +99,7 @@ class plotter:
 
         # Read the species profile data
         self.n = np.asarray(data['n_e'])
+        self.ni = np.asarray(data['n_i'])
         self.pi = np.asarray(data['p_' + self.ion_tag])
         self.pe = np.asarray(data['p_e'])
         self.Ti = np.asarray(data['T_' + self.ion_tag])
@@ -240,7 +242,7 @@ class plotter:
         axs.set_ylim(bottom=0, top=1.5 * nmax)
         axs.set_xlim(left=0.0)
         axs.set_xlabel(self.rad_label)
-        axs.set_title(r'density [10$^{20}$ m$^{-3}$]')
+        axs.set_title(r'$\bf a)$ density [10$^{20}$ m$^{-3}$]')
         leg = axs.legend(loc='best', fancybox=False, shadow=False, ncol=1, fontsize=8)
         leg.get_frame().set_edgecolor('k')
         leg.get_frame().set_linewidth(0.65)
@@ -268,7 +270,7 @@ class plotter:
         axs.set_ylim(bottom=0)
         axs.set_xlim(left=0.0)
         axs.set_xlabel(self.rad_label)
-        axs.set_title('temperature [keV]')
+        axs.set_title(r'$\bf b)$ temperature [keV]')
         leg = axs.legend(loc='best', fancybox=False, shadow=False, ncol=1, fontsize=8)
         leg.get_frame().set_edgecolor('k')
         leg.get_frame().set_linewidth(0.65)
@@ -288,7 +290,7 @@ class plotter:
         axs.set_ylim(bottom=0)
         axs.set_xlim(left=0.0)
         axs.set_xlabel(self.rad_label)
-        axs.set_title(r'pressure [10$^{20}$m$^{-3}$ keV]')
+        axs.set_title(r'$\bf c)$ pressure [10$^{20}$m$^{-3}$ keV]')
         axs.grid(self.grid_lines)
 
     def plot_power_balance(self, axs):
@@ -309,7 +311,7 @@ class plotter:
             axs.set_ylim(bottom=0, top=2 * top)
             axs.set_xlabel(self.rad_label)
             axs.set_xlim(left=0.0)
-            axs.set_title('power balance [MW]')
+            axs.set_title(r'$\bf d)$ power balance [MW]')
             leg = axs.legend(loc='best', fancybox=False, shadow=False, ncol=1, fontsize=8)
             leg.get_frame().set_edgecolor('k')
             leg.get_frame().set_linewidth(0.65)
@@ -328,7 +330,6 @@ class plotter:
             axs.plot(self.mid_axis, self.Sp_tot_cumint_MW_e[i][:-1], 'o:', color=self.cool_map[i+self.N_cumulative_last])
             axs.set_xlabel(self.rad_label)
             axs.set_xlim(left=0.0)
-            axs.set_title('power balance [MW]')
             axs.grid(self.grid_lines)
 
     def plot_heat_flux(self, axs):
@@ -342,7 +343,7 @@ class plotter:
             axs.plot(self.mid_axis, self.Qe['tot'][i], 'x-', color=self.cool_map[i+self.N_cumulative_last])
         axs.set_xlabel(self.rad_label)
         axs.set_xlim(left=0.0)
-        axs.set_title('heat flux [GB]')
+        axs.set_title(r'$\bf e)$ heat flux [GB]')
         axs.grid(self.grid_lines)
 
     def plot_particle_balance(self, axs):
@@ -355,7 +356,7 @@ class plotter:
             # axs.plot(self.axis, self.Sp_tot_int_MW_e[i], '.:', color=self.cool_map[i+self.N_cumulative_last])
             axs.set_xlabel(self.rad_label)
             axs.set_xlim(left=0.0)
-            axs.set_title('particle balance [10$^{20}$/s]')
+            axs.set_title(r'$\bf f)$ particle balance [10$^{20}$/s]')
             leg = axs.legend(loc='best', fancybox=False, shadow=False, ncol=1, fontsize=8)
             leg.get_frame().set_edgecolor('k')
             leg.get_frame().set_linewidth(0.65)
@@ -368,7 +369,7 @@ class plotter:
             # axs.plot(self.axis, self.Sp_tot_int_MW_e[i], '.:', color=self.cool_map[i+self.N_cumulative_last])
             axs.set_xlabel(self.rad_label)
             axs.set_xlim(left=0.0)
-            axs.set_title('particle balance [10$^{20}$/s]')
+            axs.set_title(r'$\bf f)$ particle balance [10$^{20}$/s]')
             axs.grid(self.grid_lines)
 
     def plot_particle_flux(self, axs):
@@ -381,7 +382,7 @@ class plotter:
             axs.plot(self.mid_axis, self.Gamma['tot'][i], 'x-', color=self.green_map[i+self.N_cumulative_last])
         axs.set_xlabel(self.rad_label)
         axs.set_xlim(left=0.0)
-        axs.set_title('particle flux [GB]')
+        axs.set_title(r'$\bf g)$ particle flux [GB]')
         axs.grid(self.grid_lines)
 
     def plot_fusion_power_density(self, axs):
@@ -401,7 +402,7 @@ class plotter:
                 axs.plot(self.axis, self.Palpha_MWm3[i], '.-', color=self.green_map[i+self.N_cumulative_last])
         axs.set_xlabel(self.rad_label)
         axs.set_xlim(left=0.0)
-        axs.set_title('fusion power density [MW/m$^{3}$]')
+        axs.set_title(r'$\bf h)$ fusion power density [MW/m$^{3}$]')
         title = (r'$P_{\alpha} = $' + f'{self.Palpha_int_MW[i]:.2f} MW\n' +
                  r'$P_{fus} = $' + f'{5.03 * self.Palpha_int_MW[i]:.2f} MW')
         leg = axs.legend(loc='best', title=title, fancybox=False, shadow=False, ncol=1, fontsize=8)
@@ -422,7 +423,7 @@ class plotter:
             else:
                 axs.plot(self.axis, self.Sp_rad_i[i] * self.P_ref_MWm3, '.-', color=self.warm_map[i+self.N_cumulative_last])
                 axs.plot(self.axis, self.Sp_rad_e[i] * self.P_ref_MWm3, '.-', color=self.cool_map[i+self.N_cumulative_last])
-        axs.set_title('radiation [MW/m$^{3}$]')
+        axs.set_title(r'$\bf i)$ radiation [MW/m$^{3}$]')
         axs.set_xlabel(self.rad_label)
         axs.set_xlim(left=0.0)
         try:
@@ -446,7 +447,7 @@ class plotter:
             else:
                 axs.plot(self.axis, self.Sp_coll_i[i] * self.P_ref_MWm3, '.-', color=self.warm_map[i+self.N_cumulative_last])
                 axs.plot(self.axis, self.Sp_coll_e[i] * self.P_ref_MWm3, '.-', color=self.cool_map[i+self.N_cumulative_last])
-        axs.set_title('collisional equilibration [MW/m$^{3}$]')
+        axs.set_title(r'$\bf h)$ collisional equilibration [MW/m$^{3}$]')
         axs.set_xlabel(self.rad_label)
         axs.set_xlim(left=0.0)
         leg = axs.legend(loc='best', fancybox=False, shadow=False, ncol=1, fontsize=8)
@@ -463,7 +464,7 @@ class plotter:
             _, top = axs.get_ylim()
             axs.set_ylim(bottom=0, top=1.5 * top)
             axs.set_xlim(left=0.0)
-            axs.set_title('auxiliary power source [MW/m$^{3}$]')
+            axs.set_title(r'$\bf i)$ auxiliary power source [MW/m$^{3}$]')
             axs.set_xlabel(self.rad_label)
             leg = axs.legend(loc='best', title='$P_{aux} =$' + f'{self.Sp_aux_int_MW_tot[i]:.2f} MW', fancybox=False, shadow=False, ncol=1, fontsize=8)
             leg.get_frame().set_edgecolor('k')
@@ -474,7 +475,7 @@ class plotter:
             axs.plot(self.axis, self.Sp_aux_i[i] * self.P_ref_MWm3, '.-', color=self.warm_map[i+self.N_cumulative_last])
             axs.plot(self.axis, self.Sp_aux_e[i] * self.P_ref_MWm3, '.-', color=self.cool_map[i+self.N_cumulative_last])
             axs.set_xlim(left=0.0)
-            axs.set_title('auxiliary power source [MW/m$^{3}$]')
+            axs.set_title(r'$\bf i)$ auxiliary power source [MW/m$^{3}$]')
             axs.set_xlabel(self.rad_label)
             axs.grid(self.grid_lines)
         
@@ -488,7 +489,7 @@ class plotter:
                     continue
             axs.plot(self.aLpi[i] - self.aLn[i], self.Qi['tot'][i], '.', color=self.warm_map[i+self.N_cumulative_last])
             axs.plot(self.aLpe[i] - self.aLn[i], self.Qe['tot'][i], '.', color=self.cool_map[i+self.N_cumulative_last])
-        axs.set_title(r'$Q(L_T)$ [GB]')
+        axs.set_title(r'$\bf j)$ $Q(L_T)$ [GB]')
         axs.set_xlabel('$a/L_T$')
         # leg = axs.legend(loc='best', fancybox=False, shadow=False, ncol=1, fontsize=8)
         # leg.get_frame().set_edgecolor('k')
@@ -504,7 +505,7 @@ class plotter:
             axs.set_ylim(bottom=0, top=1.5 * top)
         axs.set_xlim(left=0.0)
         axs.set_xlabel(self.rad_label)
-        axs.set_title('auxiliary particle source [10$^{20}$/(m$^{3}$ s)]')
+        axs.set_title(r'$\bf k)$ auxiliary particle source [10$^{20}$/(m$^{3}$ s)]')
         axs.grid(self.grid_lines)
 
     def plot_gamma(self, axs):
@@ -516,7 +517,7 @@ class plotter:
                     continue
             axs.plot(self.aLn[i], self.Gamma['tot'][i], '.', color=self.green_map[i+self.N_cumulative_last])
         axs.set_xlabel('$a/L_n$')
-        axs.set_title(r'$\Gamma(L_n)$ [GB]')
+        axs.set_title(r'$\bf l)$ $\Gamma(L_n)$ [GB]')
         axs.grid(self.grid_lines)
 
     def plot_state_profiles(self, axs, profile='Ti', t_stop=-1):
@@ -554,6 +555,13 @@ class plotter:
                     axs.plot(self.axis, self.n[t], '.-', color=self.green_map[t], label=f'$n_e$, $t =${self.time[t]:.2f} s')
                 else:
                     axs.plot(self.axis, self.n[t], '.-', color=self.green_map[t])
+                axs.set_title(r'density [10$^{20}$ m$^{-3}$]')
+            
+            if profile == 'ni':
+                if t == 0 or t == t_stop-1:
+                    axs.plot(self.axis, self.ni[t], '.-', color=self.green_map[t], label=f'$n_e$, $t =${self.time[t]:.2f} s')
+                else:
+                    axs.plot(self.axis, self.ni[t], '.-', color=self.green_map[t])
                 axs.set_title(r'density [10$^{20}$ m$^{-3}$]')
 
         _, top = axs.get_ylim()

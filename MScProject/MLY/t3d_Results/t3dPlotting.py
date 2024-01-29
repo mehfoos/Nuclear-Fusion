@@ -10,36 +10,43 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.pylab as pylab
+from netCDF4 import Dataset
 ###
     
-### IMPORT AND EXTRACT DATA
-
-def merge_defaultdicts(d,d1): # From SO
-    for k,v in d1.items():
-        if (k in d):
-            d[k].update(d1[k])
-        else:
-            d[k] = d1[k]
-    return d
 
 # Define full path
 fullPath = "C:\\Users\\mly509\\gitRepo1\\Nuclear-Fusion\\MscProject\\MLY\\t3d_Results\\"
         
+singleCase = False
 
+ncf = Dataset(fullPath+"profiles.cdf", format="NETCDF4")
 
 # Plot just one file
-if False:
+if singleCase:
     t3dPlot = t3dPlotter()
+    #t3dPlot = plotter()
     t3dPlot.grid_lines = True
     t3dOutputFile = "input_step1.log.npy"
+    #t3dOutputFile = "profiles.cdf"
     t3dPlot.read_data(fullPath + t3dOutputFile)
     #t3dPlot.plot_panel()
+    
     fig, axs = plt.subplots(1, 1)
     t3dPlot.plot_power_balance(axs)
+    fig.tight_layout()
+    fig.subplots_adjust(bottom=0.2, left=0.2)
+    #t3dPlot.plot_density_profiles(axs)
+    
+    #_,axs2 = plt.subplots(1, 1)
+    #t3dPlot.plot_state_profiles(axs2, profile='ni')
+
+    fig, axs = plt.subplots(1, 1)
+    plt.plot(t3dPlot.beta)
+    
     plt.show()
 
 # Plot multiple files
-if True:
+if not(singleCase):
     t3dPlots = []
     t3dOutputFiles = sorted([f for f in os.listdir(fullPath) if f.endswith('.npy')]) # From SO
     print(t3dOutputFiles)
@@ -70,9 +77,9 @@ if True:
     # Plot something on same figure
     #fig, axs = plt.subplots(1, 1)
     #fig, axs = plt.subplots(4, 4, figsize=(, 8))
-    fig, axs = plt.subplots(5, 3)
-    fig.set_figheight(50)
-    fig.set_figwidth(9)
+    fig, axs = plt.subplots(4, 3)
+    fig.set_figheight(20)
+    fig.set_figwidth(10)
     N_cumulative_last = 0 # The acumulative "N" up to certain log
     time_cumulative_last = 0 # Similar, but for time
     for iFile in range(len(t3dOutputFiles)):
@@ -99,9 +106,9 @@ if True:
         time_cumulative_last += t3dPlots[iFile].time[-1]
         
     
-    plt.tight_layout(rect=(0,0.05,1,0.95))
+    plt.tight_layout(rect=(0,0.02,1,0.99))
     plt.subplots_adjust(hspace=0.6)
-    fig.delaxes(axs[4,2])
+    #fig.delaxes(axs[4,2])
     # plt.subplots_adjust(left=0.05,
     #                     bottom=0.1,
     #                     right=0.95,
